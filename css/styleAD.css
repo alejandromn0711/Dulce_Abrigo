@@ -1,0 +1,260 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+body{
+	margin:0;
+	padding: 0;
+}
+.content-all{
+	width: 100%;
+	max-width: 8000px;	
+	margin: auto;
+	margin-top: 80px;
+
+}
+.content-all label{
+	position: fixed;
+	width: 100%;
+	max-width: 1000px;
+	top: 25px;
+	left: 10px;
+	font-size: 26px;
+	color: white;
+	cursor: pointer;
+	z-index: 10;
+}
+.content-all img{
+	position: fixed;
+	width: 150px;
+	max-width: 1000px;
+	top: -10px;
+	left: 90%;
+}
+header{
+	width: 100%;
+	height: 90px;
+	position: fixed;
+	left:0; 
+	top:0;
+	background: #204a87;
+}
+header h1{
+	color: white;
+	text-align: center;
+	font-size: 33px;
+	position: fixed;
+	top: 20px;
+	left: 40%;
+}
+#check{
+	display: none;
+	position: fixed;
+	left:35px; 
+}
+.MenuAd{
+	width: 350px;
+	height: 100vh;
+	background: #eaeaea;
+	position: fixed;
+	top: 90px;
+	left: 0;
+	transition: all 500ms cubic-bezier(1,0,0,1.2);
+	overflow: hidden;
+	border: 2px solid grey;
+	z-index: 2;
+
+}
+.MenuAd li a{
+	list-style: none;
+	padding: 15px;
+	color: white;
+	cursor: pointer;
+	transition: all 200ms;
+	display: block;
+	width: 350px;
+	color: #204a87;
+	font-size: 1.3em;
+	text-decoration: none;
+}
+.MenuAd li:hover{
+	background: #cccccc;
+}
+#check:checked ~ .MenuAd{
+	width: 0px;
+	
+}
+.cuerpoad{
+	margin-left: 400px;
+	margin-top: 130px;
+	max-height: 100%;
+}
+
+h3{
+	position: fixed;
+	width: 97%;
+	height: 80px;
+	background: #204a87;
+	color: white;
+	border-radius: 5px;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+.AllProductos{
+	height: 100%;
+}
+.AllProductos .ProductosMo {
+	position: fixed;
+	left: 47.5%;
+
+}
+.AllProductos .ProductosMo {
+	color: #204a87;
+	text-decoration: none;
+	font-size: 34px;	
+	background: white;
+	border: 4px solid #204a87;
+	width: 200px;
+	border-radius: 20px;
+	text-align:center;
+	position: fixed;
+	left: 44%;
+	top: 35%;
+	padding-top: 15px;
+}
+.AllProductos .ProductosAñ {
+	position: fixed;
+	left: 47.5%;
+
+}
+.AllProductos .ProductosAñ {
+	color: #204a87;
+	text-decoration: none;
+	font-size: 34px;	
+	background: white;
+	border: 4px solid #204a87;
+	width: 200px;
+	border-radius: 20px;
+	text-align:center;
+	position: fixed;
+	left: 69%;
+	top: 35%;
+	padding-top: 15px;
+}
+
+.AllProductos .ProductosVe {
+	color: #204a87;
+	text-decoration: none;
+	font-size: 34px;	
+	background: white;
+	border: 4px solid #204a87;
+	width: 200px;
+	border-radius: 20px;
+	text-align:center;
+	position: fixed;
+	left: 56%;
+	top:68%;
+	padding-top: 15px;
+}
+.AllProductos a:hover{
+	transform: scale(1.018);
+	transition: 1s;
+}
+.btnn{
+	background: #204a87;
+	border: 2px solid white;
+	border-radius: 1px;
+	color: white;
+	width: 250px;
+	height: 60px;
+	margin-left: 73px;
+}
+.btnn:hover{
+	background: #203a99;
+	border: 2px solid black;
+}
+.formAñadirP{
+	position: fixed;
+	left: 43%;
+	border: 3px solid #204a87;
+	padding: 30px 80px 30px 80px; 
+}
+.formAñadirP input{
+	width: 400px;
+	height: 40px;
+}
+
+@media (max-width: 865px){
+
+.MenuAd{
+	width: 0px;	
+	z-index: 2;
+}
+
+.formAñadirP{
+	transition: 3s;
+	position: fixed;
+	left: 8%;
+	z-index: 1;
+}
+#check:checked ~ .MenuAd{
+	width: 350px;
+}
+table{
+	position: fixed;
+	left: 10px;
+	transition: 2s;
+}
+.formAñadirQ h1{
+	position: fixed;
+	left: 10px;
+	transition: 2s;
+}
+
+}
+
+@media (max-width: 873px){
+h3{
+	position: fixed;
+	left: 10px;
+}	
+
+.AllProductos .ProductosMo{
+	position: fixed;
+	left: 10%;
+	transition: 2s;
+	}
+
+.AllProductos .ProductosAñ{
+	position: fixed;
+	left: 55%;
+	transition: 2s;
+	}
+
+.AllProductos .ProductosVe{
+	position: fixed;
+	left: 30%;
+	transition: 2s;
+	}
+}
+
+.MensajesP{
+	margin-top: 50%;
+}
+.formAñadirQ{
+	margin-top: 150px;
+
+}
+.tr1{
+	color: white;
+	text-align: center;
+}
+.tr2{
+	text-align: center;
+	background: #eaeaea;
+}
+.formAñadirQ h1{
+	margin-top: -40px;
+}
