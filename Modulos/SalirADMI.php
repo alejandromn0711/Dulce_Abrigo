@@ -5,10 +5,8 @@ if(isset($_SESSION['ADMI'])){
 
 session_destroy();
 
-header('location: ./Modulos/LoginADMI.php');
-
 }
-
-
-
 ?>
+<html>
+    <script>window.location.href="index.php"</script>
+</html>
