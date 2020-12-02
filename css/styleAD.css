@@ -102,14 +102,6 @@ h3{
 	padding-top: 15px;
 	padding-left: 10px;
 }
-.AllProductos{
-	height: 100%;
-}
-.AllProductos .ProductosMo {
-	position: fixed;
-	left: 47.5%;
-
-}
 .AllProductos .ProductosMo {
 	color: #204a87;
 	text-decoration: none;
@@ -119,17 +111,12 @@ h3{
 	width: 200px;
 	border-radius: 20px;
 	text-align:center;
-	position: fixed;
-	left: 44%;
-	top: 35%;
+	position: absolute;
+	left: 580px;
+	top: 240px;
 	padding-top: 15px;
 }
 .AllProductos .ProductosAñ {
-	position: fixed;
-	left: 47.5%;
-
-}
-.AllProductos .ProductosAñ {
 	color: #204a87;
 	text-decoration: none;
 	font-size: 34px;	
@@ -138,9 +125,9 @@ h3{
 	width: 200px;
 	border-radius: 20px;
 	text-align:center;
-	position: fixed;
-	left: 69%;
-	top: 35%;
+	position: absolute;
+	left: 900px;
+	top: 240px;
 	padding-top: 15px;
 }
 
@@ -153,9 +140,9 @@ h3{
 	width: 200px;
 	border-radius: 20px;
 	text-align:center;
-	position: fixed;
-	left: 56%;
-	top:68%;
+	position: absolute;
+	left: 740px;
+	top: 450px;
 	padding-top: 15px;
 }
 .AllProductos a:hover{
