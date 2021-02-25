@@ -52,7 +52,10 @@
                             $mensaje="Producto Agregado.";                            
 					}else{
                         $id_productos=array_column($_SESSION['CARRITO'], 'codproducto');
-
+                        if (in_array($ID, $id_productos)) {
+                            echo "<script>alert('El Producto Ya Ha Sido Agregado');</script>";
+                            $mensaje="";
+                        }else{
 
 						$num_productos=count($_SESSION['CARRITO']);
 						$producto=array(
@@ -64,6 +67,7 @@
 						$_SESSION['CARRITO'][$num_productos]=$producto;
                          $mensaje="Producto Agregado.";
 					}
+                }
 					//$mensaje=print_r( $_SESSION,true);
                 break;
                 case "Eliminar":
