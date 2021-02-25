@@ -9,7 +9,7 @@ if ($_POST){
 	$fecha=date('Y-m-d');
 	$SID=session_id();
 	$correo=$_POST['email'];
-	$idventa=max('id');
+	$idventa=NULL;
 	foreach ($_SESSION['CARRITO'] as $indice => $producto) {
 		$total=$total+($producto['precio'])*$producto['cantidad'];
 		}
