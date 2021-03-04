@@ -26,20 +26,14 @@ $resultado->bind_param("sssssss",$nombre_producto, $descripcion, $precio, $exist
 $result=$resultado->execute();
 
 if ($result) {
-	?>
-<img class="LogoMensaje" src="img/1600738901566.png">
-<div class="AllMensajes">
-	<h2 class="MensajesP">Producto Actualizado</h2>
-	<a class="volver" href="../IndexAd.php">Volver</a>
-</div>
-	<?php
+	echo '<script type="text/javascript">
+    alert("Producto Actualizado");
+    window.location.href="../indexAD.php?p=ProductosADMI";
+    </script>';
 }else{
-	?>
-<img class="LogoMensaje" src="img/1600738901566.png">
-<div class="AllMensajes">
-	<h2 class="MensajesP">Error Al Actualizar</h2>
-	<a class="volver" href="../IndexAd.php">Volver</a>
-</div>
-	<?php
+	echo '<script type="text/javascript">
+    alert("Error Al Actualizar");
+    window.location.href="../indexAD.php?p=ProductosADMI";
+    </script>';
 }
 ?>

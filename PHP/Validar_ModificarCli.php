@@ -20,20 +20,14 @@ $resultado->bind_param("ss",$estado, $idcliente);
 $result=$resultado->execute();
 
 if ($result) {
-	?>
-<img class="LogoMensaje" src="img/1600738901566.png">
-<div class="AllMensajes">
-	<h2 class="MensajesP">Producto Actualizado</h2>
-	<a class="volver" href="./IndexAd.php">Volver</a>
-</div>
-	<?php
+	echo '<script type="text/javascript">
+    alert("Cliente Actualizado");
+    window.location.href="../indexAD.php?p=ClientesADMI";
+    </script>';
 }else{
-	?>
-<img class="LogoMensaje" src="img/1600738901566.png">
-<div class="AllMensajes">
-	<h2 class="MensajesP">Error Al Actualizar</h2>
-	<a class="volver" href="./IndexAd.php">Volver</a>
-</div>
-	<?php
+	echo '<script type="text/javascript">
+    alert("Error Al Actualizar");
+    window.location.href="../indexAD.php?p=ClientesADMI";
+    </script>';
 }
 ?>

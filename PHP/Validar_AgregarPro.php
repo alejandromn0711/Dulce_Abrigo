@@ -16,20 +16,14 @@ $objProducto->crearProducto($_REQUEST['codproducto'], $_REQUEST['nombre_producto
 $resultado=$objProducto->agregarproducto();
 
 if ($resultado) {
-?>
-<img class="LogoMensaje" src="img/1600738901566.png">
-<div class="AllMensajes">
-	<h2 class="MensajesP">Producto Agregado</h2>
-	<a class="volver" href="../IndexAd.php">Volver</a>
-</div>
-	<?php
+	echo '<script type="text/javascript">
+    alert("Producto Agregado");
+    window.location.href="../indexAD.php?p=ProductosADMI";
+    </script>';
 }else{
-	?>
-<img class="LogoMensaje" src="img/1600738901566.png">
-<div class="AllMensajes">
-	<h2 class="MensajesP">Error Al Agregar Producto</h2>
-	<a class="volver" href="../IndexAd.php">Volver</a>
-</div>
-	<?php
+	echo '<script type="text/javascript">
+    alert("Error Al Agregar");
+    window.location.href="../indexAD.php?p=ProductosADMI";
+    </script>';
 }
 ?>

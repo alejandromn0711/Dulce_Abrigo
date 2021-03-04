@@ -3,7 +3,8 @@ require "ConexionBD.php";
 include "../Carrito.php";
 require "ClasesCarro.php";
 ?>
-<?php  
+<?php
+session_destroy();
 if ($_POST){ 
 	$total=0;
 	$fecha=date('Y-m-d');
@@ -20,6 +21,12 @@ $objProducto= new Carro();
 $objProducto->crearVenta($idventa, $fecha, $correo, $telefono, $total, 'Pendiente');
 
 $resultado=$objProducto->agregarVenta();
+}
+if (!isset($_SESSION['active'])) {
+  echo '<script type="text/javascript">
+    alert("Producto Actualizado");
+    window.location.href="../indexAD.php?p=ProductosADMI";
+    </script>';
 }
 ?>
 
@@ -44,7 +51,7 @@ $resultado=$objProducto->agregarVenta();
   </p>
     <a class="btn btn-primary btn-lg" href="../index.php" role="button">Volver Al Inicio</a><br><br><br>
   <p>
-  	Los Productos Seran Enviados A La Puerta De Tu Casa 10 Dias Despues De Tu Encargo<br>
+  	Se Te Contactara Para Validar Tu Compra Y Los Productos Seran Enviados A La Puerta De Tu Casa 10 Dias Despues De Tu Encargo<br>
   	<strong>(Para Dudas O Quejas: AsistenciaDulceAbrigo@gmail.com)</strong>
   </p>
 </div>
