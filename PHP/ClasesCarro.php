@@ -8,6 +8,7 @@ class Carro
     Private $Cantidad;
 	Private $fecha;
 	Private $correocli;
+	Private $telefono;
 	private $total;
 	private $estatus;
 	private $Conexion;
@@ -31,6 +32,11 @@ class Carro
 	public function getcorreocli()
 	{
 		return $this->correocli;
+	}
+
+	public function gettelefono()
+	{
+		return $this->telefono;
 	}
 
 	public function gettotal()
@@ -60,6 +66,12 @@ class Carro
 		 $this->correocli=$newVal;
 	}
 
+	public function settelefono($newVal)
+	{
+		 $this->telefono=$newVal;
+	}
+
+
 	public function settotal($newVal)
 	{
 		 $this->total=$newVal;
@@ -71,12 +83,13 @@ class Carro
 	}
 
 	
-	public function crearVenta($id,$fecha,$correocli,$total,$estatus)
+	public function crearVenta($id,$fecha,$correocli,$telefono,$total,$estatus)
 	{
 		
 		$this->id=$id;
 		$this->fecha=$fecha;
 		$this->correocli=$correocli;
+		$this->telefono=$telefono;		
 		$this->total=$total;
 		$this->estatus=$estatus;
 
@@ -86,8 +99,8 @@ class Carro
 	public function agregarVenta()
 	{	
 		$this->Conexion=Conectarse();
-		$sql="INSERT INTO ventas(id, fecha, correocli, total, estatus)
-        values ('$this->id','$this->fecha','$this->correocli','$this->total','$this->estatus')";
+		$sql="INSERT INTO ventas(id, fecha, correocli, telefono, total, estatus)
+        values ('$this->id','$this->fecha','$this->correocli','$this->telefono', '$this->total','$this->estatus')";
 		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
 		return $resultado;	

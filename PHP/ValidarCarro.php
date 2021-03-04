@@ -9,6 +9,7 @@ if ($_POST){
 	$fecha=date('Y-m-d');
 	$SID=session_id();
 	$correo=$_POST['email'];
+	$telefono=$_POST['telefono'];
 	$idventa=NULL;
 	foreach ($_SESSION['CARRITO'] as $indice => $producto) {
 		$total=$total+($producto['precio'])*$producto['cantidad'];
@@ -16,7 +17,7 @@ if ($_POST){
 
 $objProducto= new Carro();
 
-$objProducto->crearVenta($idventa, $fecha, $correo, $total, 'Pendiente');
+$objProducto->crearVenta($idventa, $fecha, $correo, $telefono, $total, 'Pendiente');
 
 $resultado=$objProducto->agregarVenta();
 }
@@ -34,16 +35,14 @@ $resultado=$objProducto->agregarVenta();
 
 <body>
 	<div class="jumbotron text-center">
-  <h1 class="display-4">¡Paso Final!</h1>
+  <h1 class="display-4">¡Compra Realizada!</h1>
   <p class="lead"></p>
   <hr class="my-4">
-  <p> Estas Apunto De Realizar Tu Pedido Por La Cantidad De:
+  <p> Tu Pedido Ha Sido Realizado El Pago Contra Entrega Sera De:
   	<h4>$<?php echo number_format($total); ?></h4>
-    <h6>(IVA No Incluido)</h6>
+    <h6>(IVA Incluido)</h6>
   </p>
-  <form action="Validar_Venta.php" method="post">
-    <button class="btn btn-primary btn-lg" href="#" role="button">Continuar</button><br><br><br>
-  </form>
+    <a class="btn btn-primary btn-lg" href="../index.php" role="button">Volver Al Inicio</a><br><br><br>
   <p>
   	Los Productos Seran Enviados A La Puerta De Tu Casa 10 Dias Despues De Tu Encargo<br>
   	<strong>(Para Dudas O Quejas: AsistenciaDulceAbrigo@gmail.com)</strong>
