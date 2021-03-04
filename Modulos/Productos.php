@@ -129,28 +129,17 @@ if(isset($_GET['action']))
 <?php } ?>
 </div>
 
-    <?php
-$sql="SELECT * FROM categoria";
-$conexion=Conectarse();
-$resul= mysqli_query($conexion,$sql);
-if(mysqli_num_rows($resul) > 0){
-    while ($row=mysqli_fetch_array($resul)){
-?>
 <div class="categorias_var">
     <ul>
-    <?php $id_cat=$row['idcategoria'];?>
-        <li><a href="?p=Productos?id_categoria=<?php echo $id_cat?>"><img src="img/catColchon.jpg"><br><?php echo $row['nombre_categoria'];?></a></li>
-        
+        <li><a href="?p=colchones"><img src="img/catColchon.jpg"><br>COLCHONES</a></li>
+        <li><a href="?p=almohadas"><img src="img/catAlmohada.jpg"><br>ALMOHADAS</a></li>
+        <li><a href="?p=sabanas"><img src="img/catSabana.jpg"><br>SABANAS</a></li>
+        <li><a href="?p=bases"><img src="img/catBase.jpg"><br>BASE CAMAS</a></li>
+        <li><a href="?p=telas"><img src="img/catTela.jpg"><br>TELAS</a></li>
+
     </ul>
+        
 </div>
-
-<?php
-    }
-}
-
-?>
-
-
 
     <?php
 $sql="SELECT * FROM producto";
