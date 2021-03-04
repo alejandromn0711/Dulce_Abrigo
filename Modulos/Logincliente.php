@@ -24,10 +24,11 @@ if (!empty($_SESSION['active'])) {
                 $data = mysqli_fetch_array($query);
 
                 $_SESSION['active'] = true;
-                $_SESSION['idclien'] = $data['idcliente'];
+                $_SESSION['cedula'] = $data['cedula'];
                 $_SESSION['nombre'] = $data['nombre'];
                 $_SESSION['correo'] = $data['correo'];
                 $_SESSION['telefono'] = $data['telefono'];
+                $_SESSION['imagen'] = $data['imagen'];
 
                 header("location: ../index.php");
             } else {

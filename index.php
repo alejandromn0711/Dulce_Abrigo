@@ -51,7 +51,7 @@ if (!isset($_GET["p"])) {
         ?>
 
          <li class="nav-item"><a href="?p=MostrarCarrito" class="nav-link">Carro de compras (<?php echo (empty($_SESSION['CARRITO']))?0: count($_SESSION['CARRITO']); ?>)</a></li>
-          <li class="nav-item"><a href="Modulos/Logincliente.php" class="nav-link"><i class="fas fa-user-alt fa-1x"></i>&nbsp;&nbsp;<?php echo ucwords($_SESSION['nombre']); ?></a></li>
+          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><i class="fas fa-user-alt fa-1x"></i>&nbsp;&nbsp;<?php echo ucwords($_SESSION['nombre']); ?></a></li>
           <li class="nav-item"><a href="?p=Salir" class="nav-link">Salir</a></li>
 
 
