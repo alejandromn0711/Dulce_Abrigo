@@ -123,18 +123,7 @@ if(isset($_GET['action']))
     </div>
 
     <!--FIN IMG CARRUSEL-->
-<div class="categorias_var">
-    <ul>
-        <li><a href="?p=colchones"><img src="img/catColchon.jpg"><br>COLCHONES</a></li>
-        <li><a href="?p=almohadas"><img src="img/catAlmohada.jpg"><br>ALMOHADAS</a></li>
-        <li><a href="?p=sabanas"><img src="img/catSabana.jpg"><br>SABANAS</a></li>
-        <li><a href="?p=bases"><img src="img/catBase.jpg"><br>BASE CAMAS</a></li>
-        <li><a href="?p=telas"><img src="img/catTela.jpg"><br>TELAS</a></li>
-
-    </ul>
-</div>
-
-<div class="container">
+  <div class="container">
     <br>
     <?php if ($mensaje!="") { ?>
     <div class="alert alert-primary">
@@ -144,6 +133,18 @@ if(isset($_GET['action']))
         <a href="index.php?p=MostrarCarrito" class="badge badge-primary" style="background: #4981b3">Ver Carrito</a>
     </div>
 <?php } ?>
+</div>
+
+<div class="categorias_var">
+    <ul>
+        <li><a href="?p=colchones"><img src="img/catColchon.jpg"><br>COLCHONES</a></li>
+        <li><a href="?p=almohadas"><img src="img/catAlmohada.jpg"><br>ALMOHADAS</a></li>
+        <li><a href="?p=sabanas"><img src="img/catSabana.jpg"><br>SABANAS</a></li>
+        <li><a href="?p=bases"><img src="img/catBase.jpg"><br>BASE CAMAS</a></li>
+        <li><a href="?p=telas"><img src="img/catTela.jpg"><br>TELAS</a></li>
+
+    </ul>
+        
 </div>
 
 <?php
