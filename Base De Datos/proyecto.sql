@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-02-2021 a las 20:18:39
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Tiempo de generación: 04-03-2021 a las 17:30:04
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,22 +56,23 @@ CREATE TABLE `cliente` (
   `telefono` varchar(10) NOT NULL,
   `direccion` varchar(100) NOT NULL,
   `Clave` varchar(100) NOT NULL,
-  `estado` set('Activo','Inactivo') NOT NULL
+  `estado` set('Activo','Inactivo') NOT NULL,
+  `imagen` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`cedula`, `correo`, `nombre`, `telefono`, `direccion`, `Clave`, `estado`) VALUES
-(10832175, 'maro31@gmail.com', 'Mateo ', '3005487544', '0', 'd64bd96f9f28533849461bdd2e8481a0', 'Activo'),
-(79583602, 'perez2323@gmail.com', 'Raul Perez', '3115248596', 'Carrera 4ta #89c 62 sur', '62c882cae9d487dffdcbbecae0bb6ad7', 'Activo'),
-(80108234, 'rabbit09@gmail.com', 'Conejo', '5478954125', '0', 'a215b0a8fe5fe544fbe987f5e15fc256', 'Activo'),
-(87321402, 'sneider53535@gmail.com', 'Sneider Guzman', '3224578459', '0', '84a88108434f119b7cb5b06d5d84be58', 'Activo'),
-(91234871, 'hs154@gmail.com', 'Harold', '3154782159', '0', '6b7661bf1b2f463e984927960210d2e9', 'Activo'),
-(678884531, 'perdo454@hotmail.com', 'Hector', '3227459874', '0', '90e528618534d005b1a7e7b7a367813f', 'Activo'),
-(990108129, 'dalniel@gmail.com', 'Daniel Salvador', '3150247858', '0', 'b5ea8985533defbf1d08d5ed2ac8fe9b', 'Activo'),
-(1000693932, 'camilo1454@gmail.com', 'Cristian Camilo', '3110489652', '0', 'fa3367027246db000e7cd30d8e4e6615', 'Activo');
+INSERT INTO `cliente` (`cedula`, `correo`, `nombre`, `telefono`, `direccion`, `Clave`, `estado`, `imagen`) VALUES
+(10832175, 'maro31@gmail.com', 'Mateo ', '3005487544', '0', 'd64bd96f9f28533849461bdd2e8481a0', 'Activo', 0x75736572332e6a7067),
+(79583602, 'perez2323@gmail.com', 'Raul Perez', '3115248596', 'Carrera 4ta #89c 62 sur', '62c882cae9d487dffdcbbecae0bb6ad7', 'Activo', ''),
+(80108234, 'rabbit09@gmail.com', 'Conejo', '5478954125', '0', 'a215b0a8fe5fe544fbe987f5e15fc256', 'Activo', ''),
+(87321402, 'sneider53535@gmail.com', 'Sneider Guzman', '3224578459', '0', '84a88108434f119b7cb5b06d5d84be58', 'Activo', ''),
+(91234871, 'hs154@gmail.com', 'Harold', '3154782159', '0', '6b7661bf1b2f463e984927960210d2e9', 'Activo', ''),
+(678884531, 'perdo454@hotmail.com', 'Hector', '3227459874', '0', '90e528618534d005b1a7e7b7a367813f', 'Activo', ''),
+(990108129, 'dalniel@gmail.com', 'Daniel Salvador', '3150247858', '0', 'b5ea8985533defbf1d08d5ed2ac8fe9b', 'Activo', ''),
+(1000693932, 'camilo1454@gmail.com', 'Cristian Camilo', '3110489652', '0', 'fa3367027246db000e7cd30d8e4e6615', 'Activo', '');
 
 -- --------------------------------------------------------
 
