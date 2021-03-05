@@ -4,7 +4,6 @@ include "../Carrito.php";
 require "ClasesCarro.php";
 ?>
 <?php
-session_destroy();
 if ($_POST){ 
 	$total=0;
 	$fecha=date('Y-m-d');
@@ -21,12 +20,6 @@ $objProducto= new Carro();
 $objProducto->crearVenta($idventa, $fecha, $correo, $telefono, $total, 'Pendiente');
 
 $resultado=$objProducto->agregarVenta();
-}
-if (!isset($_SESSION['active'])) {
-  echo '<script type="text/javascript">
-    alert("Producto Actualizado");
-    window.location.href="../indexAD.php?p=ProductosADMI";
-    </script>';
 }
 ?>
 

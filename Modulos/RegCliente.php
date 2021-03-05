@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Correo" name="correo" required="">
+                    <input type="email" class="fadeIn second" placeholder="Correo" name="correo" required="">
                 </div>
 
 

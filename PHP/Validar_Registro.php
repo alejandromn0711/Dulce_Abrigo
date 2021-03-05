@@ -13,7 +13,6 @@ extract($_REQUEST);
 $objProducto= new Cliente();
 
 $objProducto->crearcliente($_REQUEST['cedula'],$_REQUEST['correo'], $_REQUEST['nombre'], $_REQUEST['telefono'], $_REQUEST['direccion'], md5($_REQUEST['clave']), $_REQUEST['imagen']);
-
 $resultado=$objProducto->agregarcliente();
 
 if ($resultado) {
