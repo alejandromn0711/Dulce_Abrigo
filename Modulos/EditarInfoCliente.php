@@ -67,7 +67,7 @@ if (isset($_SESSION['active'])) {
       </div>
 
       <div class="form-group">
-        <label for="exampleFormControlInput1">Telefono</label>
+        <label for="exampleFormControlInput1">telefono</label>
         <input type="text" class="form-control" name="telefono" id="exampleFormControlInput1" value="<?php echo $row['telefono'] ?>">
       </div>
 
