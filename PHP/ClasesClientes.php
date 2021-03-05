@@ -8,6 +8,7 @@ class Cliente
 	Private $telefono;
 	private $clave;
 	private $direccion;
+	private $imagen;
 	private $Conexion;
 
 	public function Cliente()
@@ -46,6 +47,11 @@ class Cliente
 		return $this->direccion;
 	}
 
+	public function getimagen()
+	{
+		return $this->imagen;
+	}
+
 	
 
 	public function setcedula($newVal)
@@ -77,10 +83,14 @@ class Cliente
 	public function setdireccion($newVal)
 	{
 		 $this->direccion=$newVal;
+	}
+
+	public function setimagen($newVal)
+	{
+		$this->imagen = $newVal;
 	}	
 
-
-	public function crearcliente($cedula,$correo,$nombre,$telefono,$direccion, $clave)
+	public function crearcliente($cedula,$correo,$nombre,$telefono,$direccion, $clave, $imagen)
 	{
 		
 		$this->cedula=$cedula;
@@ -89,13 +99,14 @@ class Cliente
 		$this->telefono=$telefono;
 		$this->direccion=$direccion;
 		$this->clave=$clave;
+		$this->imagen=$imagen;	
 	
 	}
 	public function agregarcliente()
 	{	
 		$this->Conexion=Conectarse();
-		$sql="INSERT INTO cliente(cedula , correo, nombre, telefono, direccion, clave)
-		values ('$this->cedula', '$this->correo','$this->nombre','$this->telefono','$this->direccion','$this->clave')";
+		$sql="INSERT INTO cliente(cedula , correo, nombre, telefono, direccion, clave, imagen)
+		values ('$this->cedula', '$this->correo','$this->nombre','$this->telefono','$this->direccion','$this->clave', '$this->imagen')";
 		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
 		return $resultado;	

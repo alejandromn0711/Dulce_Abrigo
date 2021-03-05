@@ -58,7 +58,7 @@ if (!empty($_SESSION['active'])) {
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Usuario" name="correo">
+                    <input type="text" class="fadeIn second" placeholder="Correo" name="correo">
 
                 </div>
 
