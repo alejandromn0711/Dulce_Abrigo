@@ -77,7 +77,7 @@ if (isset($_SESSION['active'])) {
 
       <div class="form-group">
         <label for="exampleFormControlInput1"><b>Cambiar Foto de perfil (jpg)</b></label><br>
-        <input class='filestyle' data-buttonText="Logo" type="file" name="imagenclien" id="imagefile" accept="image/*">
+        <input class='filestyle' data-buttonText="Logo" type="file" name="imagenclien" id="imagefile" value="usuario.jpg">
       </div>
 
 

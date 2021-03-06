@@ -38,10 +38,6 @@
                     <input type="password" class="form-control" placeholder="Contraseña" name="clave" required="">
                 </div>
 
-                <div class="form-group">
-                    <input type="file" class="form-control" placeholder="Imagen" name="imagen">
-                </div>
-
         </div><br>
 
         <div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div><br>

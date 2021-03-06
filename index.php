@@ -37,21 +37,21 @@ if (!isset($_GET["p"])) {
       <ul class="navbar-nav ml-auto">
         <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
         <li class="nav-item"><a href="?p=Productos" class="nav-link">Productos</a></li>
-      
+
 
 
 
 
         <?php
         if (!isset($_SESSION)) {
-        session_start();
+          session_start();
         }
         if (isset($_SESSION['active'])) {
 
         ?>
 
-         <li class="nav-item"><a href="?p=MostrarCarrito" class="nav-link">Carro de compras (<?php echo (empty($_SESSION['CARRITO']))?0: count($_SESSION['CARRITO']); ?>)</a></li>
-          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><i class="fas fa-user-alt fa-1x"></i>&nbsp;&nbsp;<?php echo ucwords($_SESSION['nombre']); ?></a></li>
+          <li class="nav-item"><a href="?p=MostrarCarrito" class="nav-link">Carro de compras (<?php echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']); ?>)</a></li>
+          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $_SESSION['imagen'] ?>">&nbsp;&nbsp;<?php echo ucwords($_SESSION['nombre']); ?></a></li>
           <li class="nav-item"><a href="?p=Salir" class="nav-link">Salir</a></li>
 
 
@@ -137,10 +137,10 @@ if (!isset($_GET["p"])) {
 
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/all.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.bundle2.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle2.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script>
-    $(function () {
-            $('[data-toggle="popover"]').popover()
-   })
+  $(function() {
+    $('[data-toggle="popover"]').popover()
+  })
 </script>
