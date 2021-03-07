@@ -14,28 +14,28 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Cedula" name="cedula" required="">
+                    <input type="text" class="fadeIn second" placeholder="Cedula" name="cedula" required="" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Nombre" name="nombre" required="">
+                    <input type="text" class="fadeIn second" placeholder="Nombre" name="nombre" required="" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                    <input type="email" class="fadeIn second" placeholder="Correo" name="correo" required="">
+                    <input type="email" class="fadeIn second" placeholder="Correo" name="correo" required="" autocomplete="off">
                 </div>
 
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Telefono" name="telefono" required="">
+                    <input type="text" class="fadeIn second" placeholder="Telefono" name="telefono" required="" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Direccion" name="direccion" required="">
+                    <input type="text" class="fadeIn second" placeholder="Direccion" name="direccion" required="" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Contraseña" name="clave" required="">
+                    <input type="password" class="form-control" placeholder="Contraseña" name="clave" required="" autocomplete="off">
                 </div>
 
         </div><br>
