@@ -21,7 +21,7 @@
 
 	<div class="form-group">
 		<input type="text" class="form-control" name="existencia" id="existencia" placeholder="Existencias Del Producto" maxlength="3" minlength="1" pattern="[0-9]+">
-	</div>	
+	</div>
 
 	<div class="form-group">
 		<input type="file" class="form-control" name="imagen" id="imagen" placeholder="Imagen Del Producto">
@@ -29,10 +29,12 @@
 
 	<div class="form-group">
 		<input type="text" class="form-control" name="fk_idcategoria" id="fk_idcategoria" placeholder="Categoria" maxlength="1" minlength="1" pattern="[0-9]+">
-	</div>	
+	</div>
 
 	<div class="form-group">
-		<button type="submit" class="btnn" name="enviar"><i class="fa fa-check"></i> Agregar Producto</button>
+		<button type="submit" class="btnn" name="enviar"><i class="fa fa-check"></i> Agregar Producto</button><br><br>
+		<a href="?p=VerPro" style="color: #336699; text-decoration:none; margin-left:160px;"><i class="fas fa-chevron-circle-left fa-1x">&nbsp;</i>Regresar</a>
+
 	</div>
-</form>	
+</form>
 </form>

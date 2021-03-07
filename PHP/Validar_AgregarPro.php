@@ -18,12 +18,12 @@ $resultado=$objProducto->agregarproducto();
 if ($resultado) {
 	echo '<script type="text/javascript">
     alert("Producto Agregado");
-    window.location.href="../indexAD.php?p=ProductosADMI";
+    window.location.href="../indexAD.php?p=VerPro";
     </script>';
 }else{
 	echo '<script type="text/javascript">
     alert("Error Al Agregar");
-    window.location.href="../indexAD.php?p=ProductosADMI";
+    window.location.href="../indexAD.php?p=VerPor";
     </script>';
 }
 ?>

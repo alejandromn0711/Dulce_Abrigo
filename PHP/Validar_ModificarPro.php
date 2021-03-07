@@ -5,9 +5,7 @@
 </head>
 </html>
 <?php
-require "conexionbd.php";
-require "ClasesProductos.php";
-$objConexion=Conectarse();
+require "../Modulos/VerPro.php";
 
 $sql1= "SELECT producto SET nombre_producto=?, descripcion=?, precio=?, existencia=?, imagen=?, fk_idcategoria=? WHERE codproducto=?"; 
 $sql="UPDATE producto SET nombre_producto=?, descripcion=?, precio=?, existencia=?, imagen=?, fk_idcategoria=? WHERE codproducto=?";
