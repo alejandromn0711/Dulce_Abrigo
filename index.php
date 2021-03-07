@@ -52,14 +52,17 @@ if (!isset($_GET["p"])) {
           $conexion = Conectarse();
           $cedula = $_SESSION['cedula'];
           $sql = "SELECT * FROM cliente WHERE cedula = '$cedula'";
-          $resu = mysqli_query($conexion, $sql);
-          $row = mysqli_fetch_array($resu);
+          $resul = mysqli_query($conexion, $sql);
+          $row = mysqli_fetch_array($resul)
+
 
         ?>
 
           <li class="nav-item"><a href="?p=MostrarCarrito" class="nav-link">Carro de compras (<?php echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']); ?>)</a></li>
-          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $row['imagen'] ?>">&nbsp;&nbsp;<?php echo ucwords($row['nombre']); ?></a></li>
           <li class="nav-item"><a href="?p=Salir" class="nav-link">Salir</a></li>
+          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img class="imgcliente" width="20px" src="img/<?php echo $row['imagen'] ?>">&nbsp;&nbsp;<?php echo ucwords($row['nombre']); ?></a></li>
+         
+          
 
 
         <?php
@@ -145,7 +148,8 @@ if (!isset($_GET["p"])) {
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/all.min.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="js/bootstrap.bundle2.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle2.min.js"></script>
 <script>
   $(function() {
     $('[data-toggle="popover"]').popover()
