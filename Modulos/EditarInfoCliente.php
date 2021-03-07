@@ -31,7 +31,7 @@ if (isset($_SESSION['active'])) {
 
 
 
-
+    <h2>Editar informacion</h2>
     <form method="POST">
 
       <?php
@@ -41,11 +41,7 @@ if (isset($_SESSION['active'])) {
         $conexion = Conectarse();
         $cedula = $_SESSION['cedula'];
 
-
-
-
-
-        $sqlA = "UPDATE cliente SET nombre = '$_POST[nombre]' , telefono = '$_POST[telefono]' , direccion = '$_POST[direccion]', imagen = '$_POST[imagenclien]' WHERE cedula = $cedula";
+        $sqlA = "UPDATE cliente SET nombre = '$_POST[nombre]' , telefono = '$_POST[telefono]' , direccion = '$_POST[direccion]' WHERE cedula = $cedula";
         $resul = mysqli_query($conexion, $sqlA);
 
         if ($resul) {
@@ -75,14 +71,78 @@ if (isset($_SESSION['active'])) {
         <input type="text" class="form-control" name="direccion" id="exampleFormControlInput1" value="<?php echo $row['direccion'] ?>">
       </div>
 
-      <div class="form-group">
-        <label for="exampleFormControlInput1"><b>Cambiar Foto de perfil (jpg)</b></label><br>
-        <input class='filestyle' data-buttonText="Logo" type="file" name="imagenclien" id="imagefile" value="usuario.jpg">
-      </div>
-
-
       <button type="submit" class="btn btn-primary" style="background-color: #204a87; border-color:#204a87;" name="actualizar">Actualizar información</button>
     </form>
+    <br>
+
+    <h2>Cambiar foto de perfil</h2>
+    <form method="post" enctype="multipart/form-data">
+      <?php
+
+      if (isset($_POST['subir'])) {
+
+        $subirarchivo = true;
+        $subirarctivo_tamaño = $_FILES['archivo']['size'];
+        echo $_FILES['archivo']['name'];
+
+        if ($_FILES['archivo']['size'] > 2000000) {
+          $msg = " El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo";
+          $subirarchivo = false;
+        }
+
+        if (!($_FILES['archivo']['type'] == "image/jpeg" or $_FILES['archivo']['type'] == "image/png")) {
+          $msg = " Tu archivo tiene que ser JPG o png. Otros archivos no son permitidos";
+          $subirarchivo = false;
+        }
+
+        $nombreimg = $_FILES['archivo']['name'];
+        $agregar = "img/$nombreimg";
+
+        if ($subirarchivo == true) {
+
+          if (move_uploaded_file($_FILES['archivo']['tmp_name'], $agregar)) {
+            echo " Ha sido subido satisfactoriamente";
+          } else {
+            echo "Error al subir archivo";
+          }
+        } else {
+          echo $msg;
+        }
+
+
+
+       
+        $sql = "SELECT * FROM cliente WHERE cedula = $cedula";
+        $conexion = Conectarse();
+        $resu = mysqli_query($conexion, $sql);
+        $row = mysqli_fetch_array($resu);
+        $id = $row['cedula'];
+        
+
+
+        $nombreusu = $_SESSION['nombre'];
+        $sqlF = "UPDATE cliente SET imagen = '$nombreimg' WHERE cedula = '$id'";
+        $resul = mysqli_query($conexion, $sqlF);
+
+
+        if ($resul) {
+          header('location:index.php?p=EditarInfoCliente');
+        }
+      }
+
+
+      ?>
+
+      <div class="form-group">
+        <label for="exampleFormControlInput1"><b>Archivos permtidos</b></label><br>
+        <input class='filestyle' data-buttonText="Logo" type="file" name="archivo" id="archivo">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="background-color: #204a87; border-color:#204a87;" name="subir">Actualizar foto</button>
+
+
+    </form>
+
 
 
 

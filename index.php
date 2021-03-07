@@ -50,8 +50,18 @@ if (!isset($_GET["p"])) {
 
         ?>
 
+          <?php
+
+          include_once "PHP/conexionBD.php";
+
+          $sql = "SELECT * FROM cliente";
+          $conexion = Conectarse();
+          $resu = mysqli_query($conexion, $sql);
+          $row = mysqli_fetch_array($resu);
+
+          ?>
           <li class="nav-item"><a href="?p=MostrarCarrito" class="nav-link">Carro de compras (<?php echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']); ?>)</a></li>
-          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $_SESSION['imagen'] ?>">&nbsp;&nbsp;<?php echo ucwords($_SESSION['nombre']); ?></a></li>
+          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $row['imagen'] ?>">&nbsp;&nbsp;<?php echo $row['nombre'] ?></a></li>
           <li class="nav-item"><a href="?p=Salir" class="nav-link">Salir</a></li>
 
 
