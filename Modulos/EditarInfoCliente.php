@@ -77,7 +77,9 @@ if (isset($_SESSION['active'])) {
       <button type="submit" class="btn btn-primary" style="background-color: #204a87; border-color:#204a87;" name="actualizar">Actualizar información</button>
     </form>
     <br>
+  </div>
 
+  <div class="container">
     <h2>Cambiar foto de perfil</h2>
     <form method="post" enctype="multipart/form-data">
       <?php
@@ -155,11 +157,6 @@ if (isset($_SESSION['active'])) {
 
     </form>
 
-
-
-
-
-
   </div>
 
 
@@ -167,7 +164,13 @@ if (isset($_SESSION['active'])) {
 
 
 
-  </div>
+  
+
+
+
+
+
+
   <br>
 
 <?php }  ?>
