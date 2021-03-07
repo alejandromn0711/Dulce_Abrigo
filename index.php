@@ -48,10 +48,17 @@ if (!isset($_GET["p"])) {
         }
         if (isset($_SESSION['active'])) {
 
+          include "PHP/ConexionBD.php";
+          $conexion = Conectarse();
+          $cedula = $_SESSION['cedula'];
+          $sql = "SELECT * FROM cliente WHERE cedula = '$cedula'";
+          $resu = mysqli_query($conexion, $sql);
+          $row = mysqli_fetch_array($resu);
+
         ?>
 
           <li class="nav-item"><a href="?p=MostrarCarrito" class="nav-link">Carro de compras (<?php echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']); ?>)</a></li>
-          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $_SESSION['imagen'] ?>">&nbsp;&nbsp;<?php echo ucwords($_SESSION['nombre']); ?></a></li>
+          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $row['imagen'] ?>">&nbsp;&nbsp;<?php echo ucwords($row['nombre']); ?></a></li>
           <li class="nav-item"><a href="?p=Salir" class="nav-link">Salir</a></li>
 
 
