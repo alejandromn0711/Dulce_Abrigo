@@ -27,7 +27,7 @@ if (!empty($_SESSION['ADMI'])) {
                 $_SESSION['idusuario'] = $data['idusuario'];
                 $_SESSION['nombreADMI'] = $data['nombre'];
                 $_SESSION['correoADMI'] = $data['correo'];
-      
+
 
                 header("location: ../indexAD.php");
             } else {
@@ -42,7 +42,7 @@ if (!empty($_SESSION['ADMI'])) {
 <html>
 
 <head>
-<link rel="stylesheet" href="../iconos/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../iconos/fontawesome/css/all.css">
     <link rel="stylesheet" href="../CSS/Login.css">
     <title></title>
 </head>
@@ -57,12 +57,12 @@ if (!empty($_SESSION['ADMI'])) {
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Usuario" name="nombreusuario">
+                    <input type="text" class="fadeIn second" placeholder="Usuario" name="nombreusuario" autocomplete="off">
 
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Contraseña" name="clave">
+                    <input type="password" class="form-control" placeholder="Contraseña" name="clave" autocomplete="off">
 
                 </div><br>
 
