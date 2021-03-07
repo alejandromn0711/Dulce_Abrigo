@@ -45,7 +45,10 @@ if (isset($_SESSION['active'])) {
         $resul = mysqli_query($conexion, $sqlA);
 
         if ($resul) {
-          header('location:index.php?p=EditarInfoCliente');
+          echo '<script type="text/javascript">
+          alert("Se han actualizado los datos correctamente");
+          window.location.href="index.php?p=EditarInfoCliente";
+          </script>';
         }
       }
 
@@ -101,9 +104,12 @@ if (isset($_SESSION['active'])) {
         if ($subirarchivo == true) {
 
           if (move_uploaded_file($_FILES['archivo']['tmp_name'], $agregar)) {
-            echo " Ha sido subido satisfactoriamente";
+            echo '<script type="text/javascript">
+            alert("Se ha subido correctamente");
+            window.location.href="index.php?p=EditarInfoCliente";
+            </script>';
           } else {
-            echo "Error al subir archivo";
+            echo '<script type="text/javascript"> alert("Error al subir el archivo");';
           }
         } else {
           echo $msg;
@@ -111,23 +117,19 @@ if (isset($_SESSION['active'])) {
 
 
 
-       
+
         $sql = "SELECT * FROM cliente WHERE cedula = $cedula";
         $conexion = Conectarse();
         $resu = mysqli_query($conexion, $sql);
         $row = mysqli_fetch_array($resu);
         $id = $row['cedula'];
-        
+
 
 
         $nombreusu = $_SESSION['nombre'];
         $sqlF = "UPDATE cliente SET imagen = '$nombreimg' WHERE cedula = '$id'";
         $resul = mysqli_query($conexion, $sqlF);
 
-
-        if ($resul) {
-          header('location:index.php?p=EditarInfoCliente');
-        }
       }
 
 

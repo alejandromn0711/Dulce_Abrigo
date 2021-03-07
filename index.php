@@ -50,18 +50,8 @@ if (!isset($_GET["p"])) {
 
         ?>
 
-          <?php
-
-          include_once "PHP/conexionBD.php";
-
-          $sql = "SELECT * FROM cliente";
-          $conexion = Conectarse();
-          $resu = mysqli_query($conexion, $sql);
-          $row = mysqli_fetch_array($resu);
-
-          ?>
           <li class="nav-item"><a href="?p=MostrarCarrito" class="nav-link">Carro de compras (<?php echo (empty($_SESSION['CARRITO'])) ? 0 : count($_SESSION['CARRITO']); ?>)</a></li>
-          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $row['imagen'] ?>">&nbsp;&nbsp;<?php echo $row['nombre'] ?></a></li>
+          <li class="nav-item"><a href="?p=EditarInfoCliente" class="nav-link"><img width="20px" src="img/<?php echo $_SESSION['imagen'] ?>">&nbsp;&nbsp;<?php echo ucwords($_SESSION['nombre']); ?></a></li>
           <li class="nav-item"><a href="?p=Salir" class="nav-link">Salir</a></li>
 
 
@@ -147,9 +137,8 @@ if (!isset($_GET["p"])) {
 
 <script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/all.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script src="js/bootstrap.bundle2.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="js/bootstrap.bundle2.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script>
   $(function() {
     $('[data-toggle="popover"]').popover()
