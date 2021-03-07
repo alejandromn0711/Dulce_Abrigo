@@ -89,7 +89,7 @@ if (isset($_SESSION['active'])) {
         echo $_FILES['archivo']['name'];
 
         if ($_FILES['archivo']['size'] > 200000) {
-          echo '<script type="text/javascript">
+          $msg = '<script type="text/javascript">
           alert("El archivo pesa mas de 200kb");
           window.location.href="index.php?p=EditarInfoCliente";
           </script>';
@@ -97,7 +97,7 @@ if (isset($_SESSION['active'])) {
         }
 
         if (!($_FILES['archivo']['type'] == "image/jpeg" or $_FILES['archivo']['type'] == "image/png")) {
-          echo '<script type="text/javascript">
+          $msg = '<script type="text/javascript">
           alert("El formato del archivo es incorrecto prueba con una imagen JPG o PNG");
           window.location.href="index.php?p=EditarInfoCliente";
           </script>';
@@ -123,7 +123,9 @@ if (isset($_SESSION['active'])) {
 
 
 
-
+        if($subirarchivo == false){
+          exit();
+        }else{
         $sql = "SELECT * FROM cliente WHERE cedula = $cedula";
         $conexion = Conectarse();
         $resu = mysqli_query($conexion, $sql);
@@ -135,6 +137,8 @@ if (isset($_SESSION['active'])) {
         $nombreusu = $_SESSION['nombre'];
         $sqlF = "UPDATE cliente SET imagen = '$nombreimg' WHERE cedula = '$id'";
         $resul = mysqli_query($conexion, $sqlF);
+
+        }
 
       }
 
