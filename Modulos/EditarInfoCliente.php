@@ -88,13 +88,19 @@ if (isset($_SESSION['active'])) {
         $subirarctivo_tamaño = $_FILES['archivo']['size'];
         echo $_FILES['archivo']['name'];
 
-        if ($_FILES['archivo']['size'] > 2000000) {
-          $msg = " El archivo es mayor que 200KB, debes reduzcirlo antes de subirlo";
+        if ($_FILES['archivo']['size'] > 200000) {
+          echo '<script type="text/javascript">
+          alert("El archivo pesa mas de 200kb");
+          window.location.href="index.php?p=EditarInfoCliente";
+          </script>';
           $subirarchivo = false;
         }
 
         if (!($_FILES['archivo']['type'] == "image/jpeg" or $_FILES['archivo']['type'] == "image/png")) {
-          $msg = " Tu archivo tiene que ser JPG o png. Otros archivos no son permitidos";
+          echo '<script type="text/javascript">
+          alert("El formato del archivo es incorrecto prueba con una imagen JPG o PNG");
+          window.location.href="index.php?p=EditarInfoCliente";
+          </script>';
           $subirarchivo = false;
         }
 
