@@ -61,17 +61,17 @@ if (isset($_SESSION['active'])) {
 
       <div class="form-group">
         <label for="exampleFormControlInput1"><b>Nombre Completo</b></label>
-        <input type="text" class="form-control" name="nombre" id="exampleFormControlInput1" value="<?php echo $row['nombre'] ?>">
+        <input type="text" class="form-control" name="nombre" id="exampleFormControlInput1" value="<?php echo $row['nombre'] ?>" autocomplete="off">
       </div>
 
       <div class="form-group">
         <label for="exampleFormControlInput1"><b>Telefono</b></label>
-        <input type="text" class="form-control" name="telefono" id="exampleFormControlInput1" value="<?php echo $row['telefono'] ?>">
+        <input type="text" class="form-control" name="telefono" id="exampleFormControlInput1" value="<?php echo $row['telefono'] ?>" autocomplete="off">
       </div>
 
       <div class="form-group">
         <label for="exampleFormControlInput1"><b>Dirección</b></label>
-        <input type="text" class="form-control" name="direccion" id="exampleFormControlInput1" value="<?php echo $row['direccion'] ?>">
+        <input type="text" class="form-control" name="direccion" id="exampleFormControlInput1" value="<?php echo $row['direccion'] ?>" autocomplete="off">
       </div>
 
       <button type="submit" class="btn btn-primary" style="background-color: #204a87; border-color:#204a87;" name="actualizar">Actualizar información</button>
