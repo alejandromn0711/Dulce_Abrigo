@@ -66,6 +66,7 @@ if (!isset($_SESSION['active'])) {
 							<label for="my-input">Datos De Contacto</label>
 							<input type="email" class="form-control" id="email" name="email" placeholder="Correo" autocomplete="off" required>
 							<input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" autocomplete="off" required>
+							<input type="text" class="form-control" id="Direccion" name="Direccion" placeholder="Direccion" autocomplete="off" required>
 						</div>
 						<small id="emailHelp" class="form-text text-muted">La Factura Se Enviara A Este Correo</small>
 					</div><br>

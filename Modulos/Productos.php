@@ -1,5 +1,5 @@
 <?php
-require "PHP/conexionbd.php";
+require_once "PHP/conexionbd.php";
 if(isset($_POST['agregar']))
 {
     if(isset($_SESSION['add_carro']))

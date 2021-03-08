@@ -7,8 +7,6 @@ if (!isset($_GET["p"])) {
 }
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 
@@ -43,6 +41,7 @@ if (!isset($_GET["p"])) {
 
 
         <?php
+        
         if (!isset($_SESSION)) {
           session_start();
         }
