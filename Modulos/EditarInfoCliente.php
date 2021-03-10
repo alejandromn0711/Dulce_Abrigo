@@ -106,6 +106,7 @@ if (isset($_SESSION['active'])) {
               $subirarchivo = false;
             }
 
+
             if (!($_FILES['archivo']['type'] == "image/jpeg" or $_FILES['archivo']['type'] == "image/png")) {
               $msg = '<script type="text/javascript">
           alert("El formato del archivo es incorrecto prueba con una imagen JPG o PNG");
@@ -113,6 +114,8 @@ if (isset($_SESSION['active'])) {
           </script>';
               $subirarchivo = false;
             }
+
+            
 
             $nombreimg = $_FILES['archivo']['name'];
             $agregar = "img/$nombreimg";
@@ -155,7 +158,7 @@ if (isset($_SESSION['active'])) {
 
           <div class="form-group">
             <label for="exampleFormControlInput1"><b>Archivos permtidos: JPG y PNG</b></label><br>
-            <input class='filestyle' data-buttonText="Logo" type="file" name="archivo" id="archivo">
+            <input class='filestyle' data-buttonText="Logo" type="file" name="archivo" id="archivo" required>
           </div>
 
           <div class="form-group">
@@ -164,6 +167,7 @@ if (isset($_SESSION['active'])) {
           </div>
 
           <button type="submit" class="btn btn-primary" style="background-color: #204a87; border-color:#204a87;" name="subir">Actualizar foto</button>
+          <button type="reset" class="btn btn-danger" id="cancelar">Cancelar</button>
 
 
         </form>
@@ -198,4 +202,11 @@ if (isset($_SESSION['active'])) {
         }
     }
     document.getElementById('archivo').addEventListener('change', archivo, false);
+
+
+
+  $('#cancelar').click(function(){
+    $('#img').hide();
+
+  });
 </script>
