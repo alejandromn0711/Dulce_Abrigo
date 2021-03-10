@@ -26,7 +26,7 @@
 	width: 100%;
 	border-radius: 100%;
 	border: solid 0.2px #204a87;
-	min-width: 70px;
+	min-width: 60px;
 }
 .categorias_var{
 	margin-left: 18%;
@@ -36,7 +36,15 @@
 }
 
 @media (max-width: 710px){
-.categorias_var{
-	margin-left: 1%;
+.categorias_var a{
+	visibility: hidden;
+}
+.categorias_var a img{
+	visibility: visible;
+	margin-left: -75px;;
+}
+.categorias_var li {
+
+	margin-right: 10px;
 }
 }

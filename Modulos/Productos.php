@@ -148,7 +148,7 @@ if(mysqli_num_rows($resul) > 0){
 ?>
 
 <div class="proc">   
-    <div class="col-3" style="min-width: 300px; margin-left:142px; margin-top: 90px; margin-right: -140px;">
+    <div class="col-3" style="min-width: 300px; margin-left:110px; margin-top: 90px; margin-right: -140px;">
         <div class="card" style="border-color: #cdcdcd">
                 <img 
                 title="<?php echo $row['nombre_producto'];?>"

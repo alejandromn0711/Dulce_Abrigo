@@ -223,6 +223,12 @@ background: #336699;
 border-color: #336699;
 }
 
+@media (max-width: 710px) {
+.proc {
+margin-left: -60px;
+}
+}
+
 
 
 

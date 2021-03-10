@@ -246,3 +246,12 @@ h3{
 .formAñadirQ h1{
 	margin-top: -40px;
 }
+.btn-success{
+	width: 140px;
+	height: 60px;
+	float: right;
+	margin-top: -85px;
+}
+.agregarpro{
+	max-width: 700px;
+}
