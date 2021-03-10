@@ -58,7 +58,7 @@ if (!empty($_SESSION['active'])) {
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Correo" name="correo" autocomplete="off">
+                    <input type="text" class="fadeIn second" placeholder="Correo" name="correo">
 
                 </div>
 

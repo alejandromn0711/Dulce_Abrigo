@@ -15,6 +15,7 @@ if (!isset($_GET["p"])) {
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="iconos/fontawesome/css/all.css">
+  <link rel="stylesheet" href="css/style-usuario.css">
   <link rel="stylesheet" type="text/css" href="css/catEstilos.css">
 </head>
 
