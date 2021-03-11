@@ -28,7 +28,7 @@ if (mysqli_num_rows($resul) > 0) {
 		<div class="card mb-3" style=" max-width: 700px;">
 			<div class="row g-0"">
 				<div class=" col-md-4">
-				<img style="margin-top: 40px;" title="<?php echo $row['nombre_producto']; ?>" alt="<?php echo $row['nombre_producto']; ?>" class="card-img-top" src="img/<?php echo $row['imagen']; ?>">
+				<img style="margin-top: 140px;" title="<?php echo $row['nombre_producto']; ?>" alt="<?php echo $row['nombre_producto']; ?>" class="card-img-top" src="img/<?php echo $row['imagen']; ?>">
 			</div>
 			<div class="col-md-8">
 				<div class="card-body">
@@ -57,7 +57,7 @@ if (mysqli_num_rows($resul) > 0) {
 						<h5><input style="max-width:270px;" class="form-control" name="precio" id="precio" required value="<?php echo $row['precio']; ?>"></h5>
 						<o><input style="max-width:270px;" class="form-control" name="descripcion" id="descripcion" required value="<?php echo $row['descripcion']; ?>"></p>
 							<p><input style="max-width:270px;" class="form-control" name="existencia" id="existencia" value="<?php echo $row['existencia']; ?>"></p>
-							<button class="btn btn-secondary" style="background-color: #204a87; border-color:#204a87; margin-top:-443px; margin-left:300px;" name="actualizar" type="submit"> Actualizar
+							<button class="btn btn-secondary" style="background-color: #204a87; border-color:#204a87; margin-top:-390px; margin-left:300px;" name="actualizar" type="submit"> Actualizar
 							</button>
 					</form>
                     
