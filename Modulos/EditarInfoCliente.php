@@ -147,7 +147,7 @@ if (isset($_SESSION['active'])) {
 
 
 
-              $nombreusu = $_SESSION['nombre'];
+            
               $sqlF = "UPDATE cliente SET imagen = '$nombreimg' WHERE cedula = '$id'";
               $resul = mysqli_query($conexion, $sqlF);
             }

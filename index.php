@@ -14,7 +14,6 @@ if (!isset($_GET["p"])) {
   <title>Colchones Dulce Abrigo</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="iconos/fontawesome/css/all.css">
   <link rel="stylesheet" href="css/style-usuario.css">
   <link rel="stylesheet" type="text/css" href="css/catEstilos.css">
 </head>
