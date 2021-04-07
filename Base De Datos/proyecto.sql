@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-03-2021 a las 17:30:04
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.1
+-- Tiempo de generación: 07-04-2021 a las 21:54:07
+-- Versión del servidor: 10.4.14-MariaDB
+-- Versión de PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,23 +56,23 @@ CREATE TABLE `cliente` (
   `telefono` varchar(10) NOT NULL,
   `direccion` varchar(100) NOT NULL,
   `Clave` varchar(100) NOT NULL,
-  `estado` set('Activo','Inactivo') NOT NULL,
-  `imagen` longblob NOT NULL
+  `imagen` text NOT NULL DEFAULT 'usuario.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`cedula`, `correo`, `nombre`, `telefono`, `direccion`, `Clave`, `estado`, `imagen`) VALUES
-(10832175, 'maro31@gmail.com', 'Mateo ', '3005487544', '0', 'd64bd96f9f28533849461bdd2e8481a0', 'Activo', 0x75736572332e6a7067),
-(79583602, 'perez2323@gmail.com', 'Raul Perez', '3115248596', 'Carrera 4ta #89c 62 sur', '62c882cae9d487dffdcbbecae0bb6ad7', 'Activo', ''),
-(80108234, 'rabbit09@gmail.com', 'Conejo', '5478954125', '0', 'a215b0a8fe5fe544fbe987f5e15fc256', 'Activo', ''),
-(87321402, 'sneider53535@gmail.com', 'Sneider Guzman', '3224578459', '0', '84a88108434f119b7cb5b06d5d84be58', 'Activo', ''),
-(91234871, 'hs154@gmail.com', 'Harold', '3154782159', '0', '6b7661bf1b2f463e984927960210d2e9', 'Activo', ''),
-(678884531, 'perdo454@hotmail.com', 'Hector', '3227459874', '0', '90e528618534d005b1a7e7b7a367813f', 'Activo', ''),
-(990108129, 'dalniel@gmail.com', 'Daniel Salvador', '3150247858', '0', 'b5ea8985533defbf1d08d5ed2ac8fe9b', 'Activo', ''),
-(1000693932, 'camilo1454@gmail.com', 'Cristian Camilo', '3110489652', '0', 'fa3367027246db000e7cd30d8e4e6615', 'Activo', '');
+INSERT INTO `cliente` (`cedula`, `correo`, `nombre`, `telefono`, `direccion`, `Clave`, `imagen`) VALUES
+(123, 'jai.777@gmail.com', 'Jaider Moreno', '3124563214', 'Carrera 4ta', '202cb962ac59075b964b07152d234b70', 'user2.jpg'),
+(79583602, 'perez2323@gmail.com', 'Raul Perez', '3115248596', 'Carrera 4ta #89c 62 sur', '62c882cae9d487dffdcbbecae0bb6ad7', 'user5.jpg'),
+(80108234, 'rabbit09@gmail.com', 'Conejo', '5478954125', '0', 'a215b0a8fe5fe544fbe987f5e15fc256', ''),
+(87321402, 'sneider53535@gmail.com', 'Sneider Guzman', '3224578459', '0', '84a88108434f119b7cb5b06d5d84be58', ''),
+(91234871, 'hs154@gmail.com', 'Harold', '3154782159', '0', '6b7661bf1b2f463e984927960210d2e9', ''),
+(678884531, 'perdo454@hotmail.com', 'Hector', '3227459874', '0', '90e528618534d005b1a7e7b7a367813f', ''),
+(990108129, 'dalniel@gmail.com', 'Daniel Salvador', '3150247858', '0', 'b5ea8985533defbf1d08d5ed2ac8fe9b', ''),
+(1000693919, 'alejandromn0711@hotmail.com', 'Luis Alejandro Morales', '3175389995', 'Carrera 4ta #89c 62 sur', '80c9ef0fb86369cd25f90af27ef53a9e', 'user5.jpg'),
+(1000693932, 'camilo1454@gmail.com', 'Cristian Camilo', '3110489652', '0', 'fa3367027246db000e7cd30d8e4e6615', '');
 
 -- --------------------------------------------------------
 
@@ -117,19 +117,20 @@ INSERT INTO `producto` (`codproducto`, `nombre_producto`, `descripcion`, `precio
 (6, 'Colchón Piloto Doble', 'Colchon de 140x190 con base americana de alambre, capa de espuma de 26cm cuvierto de una suave tela', 870000, 4, 'piloto.jpg', 1),
 (7, 'Colchón Sencillo Con Cassata', 'Colchon de 100x190 con base americana de alambre, Capa De Cassaca y capa de espuma de 26cm cuvierto ', 860000, 4, 'cassata1.jpg', 1),
 (8, 'Colchón Semi Doble Con Cassata', 'Colchon de 120x190 con base americana de alambre, Capa De Cassaca y capa de espuma de 26cm cuvierto ', 950000, 3, 'cassata2.jpg', 1),
-(9, 'Colchón Doble Con Cassata', 'Colchon de 140x190 con base americana de alambre, Capa De Cassaca y capa de espuma de 26cm cuvierto ', 11000000, 1, 'cassata.jpg', 1),
+(9, 'Colchón Doble Con Cassata', 'Colchon de 140x190 con base americana de alambre, Capa De Cassaca y capa de espuma de 26cm cuvierto ', 1100000, 1, 'cassata.jpg', 1),
 (10, 'Colchoneta', 'Capa de espuma de 26cm de grosor con unas medidas de 100x190 y cubierta de tela suave', 130000, 15, 'colchoneta.jpg', 1),
 (11, 'Colchón Ortopedico Sencillo', 'Colchón de 100x190 con base americana de alambre, y una doble capa de 26cm de espuma viscofoam', 510000, 7, 'ortopedico1.jpg', 1),
 (12, 'Colchón Ortopedico Semi Doble', 'Colchón de 120x190 con base americana de alambre, y una doble capa de 26cm de espuma viscofoam', 560000, 5, 'ortopedico2.jpg', 1),
 (13, 'Colchón Ortopedico Doble', 'Colchón de 120x190 con base americana de alambre, y una doble capa de 26cm de espuma viscofoam', 590000, 2, 'ortopedico.jpg', 1),
 (14, 'Base Cama Cama Sencilla ', 'Base Cama de madera con para cama sencilla con medidas de 100x190 forrada en tela', 110000, 6, 'base1.jpg', 5),
 (15, 'Base Cama Cama Semi Doble', 'Base Cama de madera con para cama Semi Doble con medidas de 120x190 forrada en tela', 110000, 5, 'base.jpg', 5),
-(16, 'Base Cama Cama SemiDoble      ', 'Base Cama de madera con para cama Doble con medidas de 140x190 forrada en tela', 110000, 2, 'base2.jpg', 5),
+(16, 'Base Cama Cama Doble      ', 'Base Cama de madera con para cama Doble con medidas de 140x190 forrada en tela', 110000, 2, 'base2.jpg', 5),
 (17, 'CubreColchon Cama Sencilla', 'CubreColchon acolchado y anti fluidos de 100x190', 22000, 19, 'sabana1.jpg', 3),
 (18, 'CubreColchon Cama Semi Doble', 'CubreColchon acolchado y anti fluidos de 120x190', 24000, 15, 'sabana2.jpg', 3),
 (19, 'CubreColchon Cama Doble', 'CubreColchon acolchado y anti fluidos de 140x190', 2600, 11, 'sabana.jpg', 3),
 (20, 'Almohada Siliconada', 'Almohada personal fabricada con fibra de poliester y cubiertas con una suave tela', 15000, 60, 'almohada.jpg', 4),
-(21, 'Tela .9', 'Tela suave con un grosor de 0.9cm (El Producto Se Vende Por Metros)', 800, 200, 'telas.jpg', 2);
+(21, 'Tela .9', 'Tela suave con un grosor de 0.9cm (El Producto Se Vende Por Metros)', 800, 200, 'telas.jpg', 2),
+(122, 'Colchon121', 'dsfasfddsd', 12222, 12, 'user6.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -165,20 +166,27 @@ INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `nombreusuario`, `clave`
 
 CREATE TABLE `ventas` (
   `id` int(11) NOT NULL,
+  `SeID` varchar(11) NOT NULL,
   `fecha` date NOT NULL,
   `correocli` varchar(100) NOT NULL,
+  `telefono` varchar(10) NOT NULL,
   `total` int(20) NOT NULL,
-  `estatus` set('Pendiente','Procesado','','') NOT NULL
+  `estatus` set('Pendiente','Procesado','','') NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `cliente` varchar(40) NOT NULL,
+  `cantidad` int(2) NOT NULL,
+  `idpro` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `ventas`
 --
 
-INSERT INTO `ventas` (`id`, `fecha`, `correocli`, `total`, `estatus`) VALUES
-(1, '2021-02-16', 'alejandromn0711@gmail.com', 1090000, 'Pendiente'),
-(2, '2021-02-16', 'alejandromn0711@gmail.com', 1090000, 'Pendiente'),
-(3, '2021-02-18', 'alejandromn0711@gmail.com', 220000, 'Pendiente');
+INSERT INTO `ventas` (`id`, `SeID`, `fecha`, `correocli`, `telefono`, `total`, `estatus`, `direccion`, `cliente`, `cantidad`, `idpro`) VALUES
+(65, '5', '2021-03-08', 'Jai.777@gmail.com', '43243', 1090000, 'Pendiente', 'fdsa', 'Jaider Moreno', 1, 6),
+(66, '5', '2021-03-08', 'sdfghj@fghj.cv', '456789', 180000, 'Pendiente', 'asdfgh', 'Raul Perez', 1, 1),
+(67, '5ijsofaco1b', '2021-03-09', 'putoelquelolea@gmail.com', '5432', 110000, 'Pendiente', 'hbgvfcdx', 'Raul Perez', 1, 15),
+(68, '5ijsofaco1b', '2021-03-10', 'prueba@gmail.com', '32164', 15000, 'Pendiente', 'aasx', 'Raul Perez', 1, 20);
 
 --
 -- Índices para tablas volcadas
@@ -194,7 +202,8 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`cedula`);
+  ADD PRIMARY KEY (`cedula`),
+  ADD UNIQUE KEY `correo` (`correo`);
 
 --
 -- Indices de la tabla `detalleventas`
@@ -237,7 +246,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cedula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000693934;
+  MODIFY `cedula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1023428565;
 
 --
 -- AUTO_INCREMENT de la tabla `detalleventas`
@@ -249,7 +258,7 @@ ALTER TABLE `detalleventas`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- Restricciones para tablas volcadas
