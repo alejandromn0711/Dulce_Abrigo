@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-04-2021 a las 21:54:07
+-- Tiempo de generación: 14-04-2021 a las 21:08:41
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.10
 
@@ -72,7 +72,8 @@ INSERT INTO `cliente` (`cedula`, `correo`, `nombre`, `telefono`, `direccion`, `C
 (678884531, 'perdo454@hotmail.com', 'Hector', '3227459874', '0', '90e528618534d005b1a7e7b7a367813f', ''),
 (990108129, 'dalniel@gmail.com', 'Daniel Salvador', '3150247858', '0', 'b5ea8985533defbf1d08d5ed2ac8fe9b', ''),
 (1000693919, 'alejandromn0711@hotmail.com', 'Luis Alejandro Morales', '3175389995', 'Carrera 4ta #89c 62 sur', '80c9ef0fb86369cd25f90af27ef53a9e', 'user5.jpg'),
-(1000693932, 'camilo1454@gmail.com', 'Cristian Camilo', '3110489652', '0', 'fa3367027246db000e7cd30d8e4e6615', '');
+(1000693932, 'camilo1454@gmail.com', 'Cristian Camilo', '3110489652', '0', 'fa3367027246db000e7cd30d8e4e6615', ''),
+(1023028273, 'julian.jm7@gmail.com', 'Julian David', '3215678499', 'carrera 4ta 89c', '81dc9bdb52d04dc20036dbd8313ed055', 'dragon_ball_super_14_black_goku_by_narutorenegado01-daavka3-e1475251637487.jpg');
 
 -- --------------------------------------------------------
 
@@ -87,6 +88,35 @@ CREATE TABLE `detalleventas` (
   `preciounit` int(20) NOT NULL,
   `cantidad` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `detalleventas`
+--
+
+INSERT INTO `detalleventas` (`id`, `idventa`, `idproducto`, `preciounit`, `cantidad`) VALUES
+(155, 126, 3, 240000, 1),
+(156, 127, 3, 240000, 1),
+(157, 128, 3, 240000, 1),
+(158, 129, 3, 240000, 1),
+(159, 129, 5, 850000, 1),
+(160, 130, 3, 240000, 1),
+(161, 130, 5, 850000, 1),
+(162, 131, 3, 240000, 1),
+(163, 131, 5, 850000, 1),
+(164, 132, 3, 240000, 1),
+(165, 132, 5, 850000, 1),
+(166, 133, 3, 240000, 1),
+(167, 133, 5, 850000, 1),
+(168, 134, 3, 240000, 1),
+(169, 134, 5, 850000, 1),
+(170, 135, 3, 240000, 1),
+(171, 135, 5, 850000, 1),
+(172, 136, 3, 240000, 1),
+(173, 136, 5, 850000, 1),
+(174, 137, 3, 240000, 1),
+(175, 137, 5, 850000, 1),
+(176, 138, 3, 240000, 1),
+(177, 138, 5, 850000, 1);
 
 -- --------------------------------------------------------
 
@@ -166,27 +196,31 @@ INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `nombreusuario`, `clave`
 
 CREATE TABLE `ventas` (
   `id` int(11) NOT NULL,
-  `SeID` varchar(11) NOT NULL,
+  `clave_transaccion` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `correocli` varchar(100) NOT NULL,
-  `telefono` varchar(10) NOT NULL,
   `total` int(20) NOT NULL,
-  `estatus` set('Pendiente','Procesado','','') NOT NULL,
-  `direccion` varchar(100) NOT NULL,
-  `cliente` varchar(40) NOT NULL,
-  `cantidad` int(2) NOT NULL,
-  `idpro` int(3) NOT NULL
+  `estatus` set('Pendiente','Procesado','','') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `ventas`
 --
 
-INSERT INTO `ventas` (`id`, `SeID`, `fecha`, `correocli`, `telefono`, `total`, `estatus`, `direccion`, `cliente`, `cantidad`, `idpro`) VALUES
-(65, '5', '2021-03-08', 'Jai.777@gmail.com', '43243', 1090000, 'Pendiente', 'fdsa', 'Jaider Moreno', 1, 6),
-(66, '5', '2021-03-08', 'sdfghj@fghj.cv', '456789', 180000, 'Pendiente', 'asdfgh', 'Raul Perez', 1, 1),
-(67, '5ijsofaco1b', '2021-03-09', 'putoelquelolea@gmail.com', '5432', 110000, 'Pendiente', 'hbgvfcdx', 'Raul Perez', 1, 15),
-(68, '5ijsofaco1b', '2021-03-10', 'prueba@gmail.com', '32164', 15000, 'Pendiente', 'aasx', 'Raul Perez', 1, 20);
+INSERT INTO `ventas` (`id`, `clave_transaccion`, `fecha`, `correocli`, `total`, `estatus`) VALUES
+(126, 5, '2021-04-14', 'perez2323@gmail.com', 240000, 'Pendiente'),
+(127, 5, '2021-04-14', 'perez2323@gmail.com', 240000, 'Pendiente'),
+(128, 5, '2021-04-14', 'perez2323@gmail.com', 240000, 'Pendiente'),
+(129, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(130, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(131, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(132, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(133, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(134, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(135, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(136, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(137, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente'),
+(138, 5, '2021-04-14', 'perez2323@gmail.com', 1090000, 'Pendiente');
 
 --
 -- Índices para tablas volcadas
@@ -252,13 +286,13 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `detalleventas`
 --
 ALTER TABLE `detalleventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- Restricciones para tablas volcadas
