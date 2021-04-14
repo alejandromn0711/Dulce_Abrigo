@@ -12,7 +12,7 @@ if (!isset($_SESSION['active'])) {
 	</svg> Carrito De Compras</h3><br>
 <script type="text/javascript">
 	function ConfirmCompra() {
-		var respuesta = confirm("¿Estas Seguro Que Deseas Realizar Tu Pedido?");
+		var respuesta = confirm("¿Estas Seguro Que Deseas Realizar Tu Pedido? \n(Recuerda Verificar Que Tus Datos Esten Actualizado)");
 		if (respuesta == true) {
 			return true;
 		} else
@@ -62,13 +62,7 @@ if (!isset($_SESSION['active'])) {
 			<td colspan="5">
 				<form action="PHP/ValidarCarro.php" method="post">
 					<div class="alert-success">
-						<div class="form-group">
-							<label for="my-input">Datos De Contacto</label>
-							<input type="email" class="form-control" id="email" name="email" placeholder="Correo" autocomplete="off" required>
-							<input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" autocomplete="off" required>
-							<input type="text" class="form-control" id="Direccion" name="Direccion" placeholder="Direccion" autocomplete="off" required>
-						</div>
-						<small id="emailHelp" class="form-text text-muted">La Factura Se Enviara A Este Correo</small>
+						<small id="emailHelp" class="form-text text-muted" style="text-align: center;">La Factura Se Enviara Tu Correo <br> (Verifica Que Tus Datos Esten Actualizados)</small>
 					</div><br>
 					<button class="btn btn-primary btn-lg btn-block" type="submit" name="btnAccion" value="Enviar" onclick="return ConfirmCompra()">Finalizar Compra</button>
 				</form>

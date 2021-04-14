@@ -3,7 +3,6 @@ class Carro
 {
 
     Private $id;
-	Private $SeID;
 	Private $fecha;
 	Private $correocli;
 	Private $telefono;
@@ -24,11 +23,6 @@ class Carro
 	public function getid()
 	{
 		return $this->id;
-	}
-
-	public function getSeID()
-	{
-		return $this->SeID;
 	}
 
 	public function getfecha()
@@ -81,11 +75,6 @@ class Carro
 		 $this->id=$newVal;
 	}
 
-	public function setSeID($newVal)
-	{
-		$this->SeID = $newVal;
-	}
-
 	public function setfecha($newVal)
 	{
 		 $this->fecha=$newVal;
@@ -128,11 +117,10 @@ class Carro
 		$this->idpro = $newVal;
 	}
 	
-	public function crearVenta($id,$SeID,$fecha,$correocli,$telefono,$total,$estatus,$direccion,$cliente,$cantidad,$idpro)
+	public function crearVenta($id,$fecha,$correocli,$telefono,$total,$estatus,$direccion,$cliente,$cantidad,$idpro)
 	{
 		
 		$this->id=$id;
-		$this->SeID = $SeID;
 		$this->fecha=$fecha;
 		$this->correocli=$correocli;
 		$this->telefono=$telefono;		
@@ -156,8 +144,8 @@ class Carro
 	public function agregarVenta()
 	{	
 		$this->Conexion=Conectarse();
-		$sql="INSERT INTO ventas(id, SeID, fecha, correocli, telefono, total, estatus,direccion,cliente,cantidad,idpro)
-        values ('$this->id','$this->SeID','$this->fecha','$this->correocli','$this->telefono', '$this->total','$this->estatus','$this->direccion','$this->cliente','$this->cantidad','$this->idpro')";
+		$sql="INSERT INTO ventas(id, fecha, correocli, telefono, total, estatus,direccion,cliente,cantidad,idpro)
+        values ('$this->id','$this->fecha','$this->correocli','$this->telefono', '$this->total','$this->estatus','$this->direccion','$this->cliente','$this->cantidad','$this->idpro')";
 		$resultado=$this->Conexion->query($sql);
 		$this->Conexion->close();
 		return $resultado;	

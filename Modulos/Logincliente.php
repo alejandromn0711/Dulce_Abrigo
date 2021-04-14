@@ -28,6 +28,7 @@ if (!empty($_SESSION['active'])) {
                 $_SESSION['nombre'] = $data['nombre'];
                 $_SESSION['correo'] = $data['correo'];
                 $_SESSION['telefono'] = $data['telefono'];
+                $_SESSION['direccion'] = $data['direccion'];
                 $_SESSION['imagen'] = $data['imagen'];
 
                 header("location: ../index.php");
