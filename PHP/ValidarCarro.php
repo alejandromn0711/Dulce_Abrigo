@@ -7,7 +7,7 @@ include "../Carrito.php";
 
 $total = 0;
 $SID = session_id();
-$correo = $_SESSION['correo'];
+$correo = $_SESSION['nombre'];
 
 foreach ($_SESSION['CARRITO'] as $indice => $producto) {
   $total = $total + ($producto['precio']) * $producto['cantidad'];
@@ -58,7 +58,7 @@ foreach ($_SESSION['CARRITO'] as $indice => $producto) {
     <h6>(IVA Incluido)</h6>
     </p>
     <a class="btn btn-primary btn-lg" href="../index.php" role="button">Volver Al Inicio</a><br><br><br>
-    <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#ventanamodal">Ver Factura</button><br><br><br>
+    <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#ventanamodal">Resumen Compra</button><br><br><br>
     <p>
       Se Te Contactara Para Validar Tu Compra Y Los Productos Seran Enviados A La Puerta De Tu Casa 10 Dias Despues De Tu Encargo<br>
       <strong>(Para Dudas O Quejas: AsistenciaDulceAbrigo@gmail.com)</strong>
@@ -86,37 +86,56 @@ foreach ($_SESSION['CARRITO'] as $indice => $producto) {
 
               $listaproductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             }
+
+            echo "Factura Nro: " . $idVenta . " Para el cliente " . $correo;
             ?>
 
-          <div class="row">
-            <?php
-            foreach ($listaproductos as $producto) { ?>
-              <div class="col-9">
-                <div class="card">
-                  <div class="card-body">
-                    <p class="card-text">
-                      <?php
-                      echo "<b>Producto: </b>". $producto['nombre_producto'];
-                      ?><br><?php echo "<b>Precio: </b>$" . $producto['precio'];
-                            ?><br><?php echo "<b>Cantidad: </b>" . $producto['cantidad'];
-                                  ?><br><?php echo "<b>Total: </b>$" . $producto['precio']*$producto['cantidad'];
-                                        ?>
-                    </p>
-                  </div>
-                </div>
-              </div>
-          </div>
-        <?php
-            } ?>
 
-        </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Descargar</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <div class="row">
+            <table class="table">
+              <tr style="text-align: center;">
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+              </tr>
+              <?php
+              foreach ($listaproductos as $producto) { ?>
+                <tbody>
+                  <tr style="text-align: center;">
+                    <td> <?php echo $producto['codproducto'] ?></td>
+                    <td><?php echo $producto['nombre_producto'] ?></td>
+                    <td>$<?php echo $producto['precio'] ?> </td>
+                    <td> <?php echo $producto['cantidad'] ?> </td>
+                    <td>$<?php echo $producto['precio'] * $producto['cantidad'] ?></td>
+                  </tr>
+                <?php
+              } ?>
+                <tr style="text-align: center;">
+                  <td><b> TOTAL </b></td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td> - </td>
+                  <td> $<?php echo $total ?> </td>
+                  </tr>
+
+
+
+
+          </div>
         </div>
       </div>
     </div>
+
+    </p>
+  </div>
+  <div class="modal-footer">
+    <a class="btn btn-primary" href="../Modulos/Factura.php" >Ver Factura</a>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+  </div>
+  </div>
+  </div>
   </div>
 </body>
 <script src="../js/jquery-3.5.1.min.js"></script>
