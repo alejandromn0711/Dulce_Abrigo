@@ -9499,7 +9499,6 @@ class Mpdf implements \Psr\Log\LoggerAwareInterface
 		$dest = strtoupper($dest);
 		if (empty($dest)) {
 			if (empty($name)) {
-				$name = 'mpdf.pdf';
 				$dest = Destination::INLINE;
 			} else {
 				$dest = Destination::FILE;
