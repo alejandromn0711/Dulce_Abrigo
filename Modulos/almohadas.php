@@ -4,7 +4,7 @@
     } else {
         $c = $_GET["c"];
     }
-    ?>
+?>
 
  <?php
     require_once "PHP/conexionbd.php";
@@ -36,6 +36,7 @@
             $_SESSION['add_carro'][0] = $item_array;
         }
     }
+
     if (isset($_GET['action'])) {
         if ($_GET['action'] == 'delete') {
             foreach ($_SESSION['add_carro'] as $key => $value) {

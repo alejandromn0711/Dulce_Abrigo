@@ -5,6 +5,11 @@ if (!isset($_GET["p"])) {
 } else {
   $p = $_GET["p"];
 }
+
+if (isset($_REQUEST["sesionDestroy"])) {
+  session_destroy();
+  header('Location: index.php');
+}
 ?>
 
 <!DOCTYPE html>

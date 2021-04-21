@@ -8,12 +8,11 @@ include "../Carrito.php";
 $total = 0;
 $SID = session_id();
 $correo = $_SESSION['nombre'];
-
 foreach ($_SESSION['CARRITO'] as $indice => $producto) {
   $total = $total + ($producto['precio']) * $producto['cantidad'];
 }
 
-$sentencia = $pdo->prepare("INSERT INTO `ventas` (`id`, `clave_transaccion`, `fecha`, `correocli`, `total`, `estatus`)  VALUES 
+$sentencia = $pdo->prepare("INSERT INTO `ventas` (`id`, `session_id`, `fecha`, `correocli`, `total`, `estatus`)  VALUES 
      (NULL, :clave_transaccion, NOW(), :correo, :total, 'Pendiente' );");
 
 $sentencia->bindParam(":clave_transaccion", $SID);
@@ -57,7 +56,9 @@ foreach ($_SESSION['CARRITO'] as $indice => $producto) {
     <h4>$<?php echo number_format($total); ?></h4>
     <h6>(IVA Incluido)</h6>
     </p>
-    <a class="btn btn-primary btn-lg" href="../index.php" role="button">Volver Al Inicio</a><br><br><br>
+    <form action="../index.php" method="post">
+      <input type="submit" class="btn btn-primary btn-lg" name="sesionDestroy" value="Finalizar" />
+    </form><br>
     <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#ventanamodal">Resumen Compra</button><br><br><br>
     <p>
       Se Te Contactara Para Validar Tu Compra Y Los Productos Seran Enviados A La Puerta De Tu Casa 10 Dias Despues De Tu Encargo<br>
@@ -118,11 +119,7 @@ foreach ($_SESSION['CARRITO'] as $indice => $producto) {
                   <td> - </td>
                   <td> - </td>
                   <td> $<?php echo $total ?> </td>
-                  </tr>
-
-
-
-
+                </tr>
           </div>
         </div>
       </div>
@@ -131,7 +128,7 @@ foreach ($_SESSION['CARRITO'] as $indice => $producto) {
     </p>
   </div>
   <div class="modal-footer">
-    <a class="btn btn-primary" href="../Modulos/Factura.php" >Ver Factura</a>
+    <a class="btn btn-primary" target="_blank" download="Factura.pdf" href="../Modulos/Factura.php">Ver Factura</a>
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
   </div>
   </div>

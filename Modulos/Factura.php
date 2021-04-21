@@ -1,4 +1,5 @@
 <?php
+//---AQUI ESTA LA CONEXION CON LA BASE DE DATOS
 require_once("../composer/vendor/autoload.php");
 include "../PHP/configPDO.php";
 include "../PHP/ConexionPDO.php";
@@ -14,7 +15,7 @@ foreach ($_SESSION['CARRITO'] as $indice => $producto) {
   $total = $total + ($producto['precio']) * $producto['cantidad'];
 }
 
-$sentencia = $pdo->prepare("INSERT INTO `ventas` (`id`, `clave_transaccion`, `fecha`, `correocli`, `total`, `estatus`)  VALUES 
+$sentencia = $pdo->prepare("INSERT INTO `ventas` (`id`, `session_id`, `fecha`, `correocli`, `total`, `estatus`)  VALUES 
      (NULL, :clave_transaccion, NOW(), :correo, :total, 'Pendiente' );");
 
 $sentencia->bindParam(":clave_transaccion", $SID);
@@ -54,8 +55,8 @@ if ($completado >= 1) {
   $mpdf = new \Mpdf\Mpdf([]);
   $mpdf->WriteHTML($css, \Mpdf\HTMLParserMode::HEADER_CSS);
 
-  $mpdf->WriteHTML(
-  '<body>
+
+  $html = '<body>
     <header class="clearfix">
       <div id="logo">
         <img style="width:180px;" src="../img/1600738901566.png">
@@ -72,7 +73,7 @@ if ($completado >= 1) {
         <div><span>CLIENTE: '. $correo .' </span></div>
         <div><span>DIRECCION: '. $_SESSION['direccion'] .' </span></div>
         <div><span>EMAIL: </span>'. $_SESSION['correo'] .'</div>
-        <div><span>FECHA: </span>' . $producto['fecha'] . '</div>
+        <div><span>FECHA: </span>' . $fecha . '</div>
         <div><span>ESTATUS: </span></div>
      </div>
     </header>
@@ -89,13 +90,25 @@ if ($completado >= 1) {
             <th>TOTAL</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody>'
+            ; foreach ($listaproductos as $producto):
+            $html .=
+               '
           <tr>
+
             <td class="service">'. $producto['codproducto'] .'</td>
             <td class="desc">' . $producto['nombre_producto'] .'</td>
             <td class="unit">' . $producto['precio'] .'</td>
             <td class="qty">' . $producto['cantidad'] .'</td>
             <td class="total">' . $producto['cantidad']* $producto['precio'] . '</td>
+          </tr>'; endforeach;
+          $html .=
+         '<tr style="text-align: center;">
+              <td><b> TOTAL </b></td>
+              <td> - </td>
+              <td> - </td>
+              <td> - </td>
+              <td> $'. $total.' </td>
           </tr>
         </tbody>
       </table>
@@ -107,6 +120,7 @@ if ($completado >= 1) {
     <footer>
       Invoice was created on a computer and is valid without the signature and seal.
     </footer>
-  </body>', \Mpdf\HTMLParserMode::HTML_BODY);
-$mpdf->output("Factura_ .pdf", "I");
-?>
+  </body>';
+    $mpdf->WriteHTML($html);
+    $mpdf->Output();
+        
