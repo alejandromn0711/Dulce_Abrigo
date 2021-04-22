@@ -1,4 +1,3 @@
-/*Conexion a la base de datos usando PDO "Php Data Object"*/
 <?php
 $servidor="mysql:dbname=".BD.";host".SERVIDOR;
 
