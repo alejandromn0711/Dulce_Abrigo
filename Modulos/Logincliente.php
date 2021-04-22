@@ -1,3 +1,4 @@
+/*Se inicia la sesion Active donde se registran en las variables de sesion los datos del cliente, se realiza una consulta en la base datos y si el usuario coincide con el correo y la clave se inicia sesion, se reciben los datos del cliente por metodo POST*/
 <?php
 
 $alert = '';

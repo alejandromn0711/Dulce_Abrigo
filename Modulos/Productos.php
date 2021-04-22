@@ -126,7 +126,7 @@ if (isset($_GET['action'])) {
         </ul>
 
     </div>
-
+            /*Se realiza una consulta en la base de datos y por medio de un While se traen los datos y se visualizan en la pantalla */
     <?php
     $sql = "SELECT * FROM producto";
     $conexion = Conectarse();
