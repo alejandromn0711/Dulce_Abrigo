@@ -1,3 +1,4 @@
+/*Se reciben los datos cliente por la variable Sesion, se realiza una consulta en la base de datos para mostrar los datos del cliente segun su numero de cedula*/
 <?php include_once "PHP/conexionBD.php"; ?>
 <?php
 
@@ -39,7 +40,7 @@ if (isset($_SESSION['active'])) {
       <div class="perfil-usuario-bio">
         <h2>Actualizar información</h2>
         <form method="POST">
-
+        /*En este apartado es donde el cliente actualizara sus datos, se reciben los datos por metodo POST y realiza una sentencia sql para actualizar los datos en la base de datos*/
           <?php
 
           if (isset($_POST['actualizar'])) {
@@ -90,6 +91,7 @@ if (isset($_SESSION['active'])) {
       <div class="perfil-usuario-bio">
         <h2>Cambiar foto de perfil</h2>
         <form method="post" enctype="multipart/form-data">
+        /*En este apartado es donde se actualizara la foto de perfil del cliente, se reciben los datos por metodos PSOT y se sube la imagen al servidor, por medio de Javascript se realiza una vista previa de la imagen subida */
           <?php
 
           if (isset($_POST['subir'])) {
