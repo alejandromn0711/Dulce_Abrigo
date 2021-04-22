@@ -1,4 +1,3 @@
-/*Se cierra Sesion con el usuario ADMIN*/
 <?php
 
 

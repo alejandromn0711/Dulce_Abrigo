@@ -1,4 +1,3 @@
-/*Se cierra Sesion con usuario Cliente*/
 <?php
    
    if(isset($_SESSION['active'])){
