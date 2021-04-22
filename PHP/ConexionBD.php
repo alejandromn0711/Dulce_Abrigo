@@ -1,4 +1,4 @@
-/*Conexion con la base datos*/
+/*Conexion con la base datos */
 <?php
 function Conectarse()
 {
