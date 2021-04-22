@@ -1,4 +1,3 @@
-/*Se inicia la sesion Admi donde se registran en las variables de sesion los datos del administrador, se realiza una consulta en la base datos y si el usuario coincide con el correo y la clave se inicia sesion, se reciben los datos del administrador por metodo POST*/
 <?php
 
 $alert = '';
