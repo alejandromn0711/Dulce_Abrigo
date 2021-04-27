@@ -25,8 +25,8 @@
             <div class="carousel-item active">
                 <img src="./img/banner3.jpg" alt="">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5>Bienvenidos a nuestro sitio web</h5>
+                    <p>Aqui podras encontrar productos para tu bienestar y un buen descanso.</p>
                 </div>
             </div>
 
@@ -35,8 +35,7 @@
             <div class="carousel-item">
                 <img src="./img/banner2.jpg" alt="">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5>Te ofrecemos los mejores productos</h5>
                 </div>
 
             </div>
@@ -46,8 +45,8 @@
             <div class="carousel-item">
                 <img src="./img/banner4.jpg" alt="">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>Bienvenidos a nuestro sitio web</h5>
-                    <p>Aqui podras encontrar productos para tu bienestar y un buen descanso</p>
+                    <h5>Encontraras variacion de colores a tu preferencia</h5>
+                    
                 </div>
             </div>
 
@@ -74,7 +73,7 @@
     <div class="col-12 text-center mt-5">
         <h1 class="text-dark pt-4">Conoce nuestros productos</h1>
         <div class="border-top border-primary w-25 mx-auto my-3"></div>
-        <p class="lead">Aquí encontraras los mejores precios para sus camas, contamos con el mejor servicio en colchones, almohadas....</p>
+        <p class="lead">Aquí encontraras los mejores precios para sus camas, contamos con el mejor servicio en colchones, almohadas,sabanas y protectores.</p>
     </div>
 
     <!--SECCION TRES COLUMNAS-->
