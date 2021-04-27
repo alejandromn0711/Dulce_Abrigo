@@ -46,8 +46,8 @@
             <div class="carousel-item">
                 <img src="./img/banner4.jpg" alt="">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h5>Bienvenidos a nuestro sitio web</h5>
+                    <p>Aqui podras encontrar productos para tu bienestar y un buen descanso</p>
                 </div>
             </div>
 
@@ -114,8 +114,8 @@
 
         <div class="row text-dark py-5">
             <div class="col-12 text-center">
-                <h1>Ingrese texto...</h1>
-                <h3 class="py-3">Contenido del parrafo...</h3>
+                <h1>Ya tienes un usuario?</h1>
+                <h3 class="py-3">Registrate aqui</h3>
 
 
                 <button type="button" data-toggle="modal" data-target="#modal1" class="btn btn-secondary btn-lg ml-2">Ver mas...</button>
@@ -146,8 +146,8 @@
         <div class="row py-4">
 
             <div class="col-lg-4 mb-4 my-lg-auto">
-                <h1 class="text-dark font-weight-bold mb-3">OOOOOOOOtro titulo...</h1>
-                <p class="mb-4">OOOOOOOOOOOtro parrafo...</p>
+                <h1 class="text-dark font-weight-bold mb-3">Comodidad para tu hogar</h1>
+                <p class="mb-4">Fabricamos colchones que cumplan con las espectativas de nuestros clientes, tambien ofrecemos sabanas, almohadas y protectores de colchon de muy buena calidad. </p>
                 <a href="#" class="btn btn-outline-dark">Ver mas...</a>
             </div>
 
@@ -164,7 +164,7 @@
             <div class="row">
 
                 <div class="col-md-7 col-lg-8 col-xl-9 my-auto">
-                    <h4>Conoce todos nuestros productos...</h4>
+                    <h4>Conoce todos nuestros productos</h4>
                 </div>
 
                 <div class="col-md-5 col-lg-4 col-xl-3 pt-4 pt-md-0">
