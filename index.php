@@ -115,7 +115,7 @@ if (isset($_REQUEST["sesionDestroy"])) {
 
         <div class="col-sm-10 col-md-8 col-lg-6">
           <img src="img/logo1.png" alt="">
-          <p>ooooooooootro parrafo...</p>
+          <p>AsistenciaDulceAbrigo@gmail.com<br>Telefono</p>
           <ul class="social pt-3">
             <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
