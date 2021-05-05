@@ -26,8 +26,8 @@
                     }
 
 
-                    if(is_numeric(openssl_decrypt( $_POST['cantidad'], COD, KEY))){
-                        $CANTIDAD = openssl_decrypt( $_POST['cantidad'], COD, KEY);
+                    if(is_numeric($_POST['cantidad'])){
+                        $CANTIDAD = $_POST['cantidad'];
                         $mensaje.="Cantidad ".$CANTIDAD."<br/>";
                     }else{
                         $mensaje.="Upss... ID Incorecto".$CANTIDAD."<br/>";

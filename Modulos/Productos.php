@@ -147,7 +147,7 @@ if (isset($_GET['action'])) {
                                 <input type="hidden" name="codproducto" id="codproducto" value="<?php echo openssl_encrypt($row['codproducto'], COD, KEY); ?>">
                                 <input type="hidden" name="nombre_producto" id="nombre_producto" value="<?php echo openssl_encrypt($row['nombre_producto'], COD, KEY); ?>">
                                 <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($row['precio'], COD, KEY); ?>">
-                                <input type="hidden" name="cantidad" id="cantidad" value="<?php echo openssl_encrypt(1, COD, KEY); ?>">
+                                <input name="cantidad" id="cantidad" type="number" value="<?php echo 1; ?>"><br>
                                 <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit" style="background: #204a87; border: solid 1px #204a87;">Agregar</button>
                             </form>
                         </div>
