@@ -26,7 +26,7 @@
                     }
 
 
-                    if(is_numeric($_POST['cantidad'])){
+                    if(is_numeric( $_POST['cantidad'])){
                         $CANTIDAD = $_POST['cantidad'];
                         $mensaje.="Cantidad ".$CANTIDAD."<br/>";
                     }else{
