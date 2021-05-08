@@ -48,6 +48,8 @@ if (isset($_GET['action'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Productos</title>
+    <link rel="stylesheet" href="css/Productos.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
@@ -137,7 +139,7 @@ if (isset($_GET['action'])) {
 
             <div class="proc">
                 <div class="col-3" style="min-width: 300px; margin-left:110px; margin-top: 90px; margin-right: -140px;">
-                    <div class="card" style="border-color: #cdcdcd;  height: 440px;">
+                    <div class="card" style="border-color: #cdcdcd;  height: 475px;">
                         <img title="<?php echo $row['nombre_producto']; ?>" alt="<?php echo $row['nombre_producto']; ?>" class="card-img-top" src="img/<?php echo $row['imagen']; ?>" data-toggle="popover" data-trigger="hover" data-content="<?php echo $row['descripcion']; ?>">
                         <div class="card-body">
                             <h5><?php echo $row['nombre_producto']; ?></h5>
@@ -147,8 +149,11 @@ if (isset($_GET['action'])) {
                                 <input type="hidden" name="codproducto" id="codproducto" value="<?php echo openssl_encrypt($row['codproducto'], COD, KEY); ?>">
                                 <input type="hidden" name="nombre_producto" id="nombre_producto" value="<?php echo openssl_encrypt($row['nombre_producto'], COD, KEY); ?>">
                                 <input type="hidden" name="precio" id="precio" value="<?php echo openssl_encrypt($row['precio'], COD, KEY); ?>">
-                                <input name="cantidad" id="cantidad" type="number" value="<?php echo 1; ?>"><br>
-                                <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit" style="background: #204a87; border: solid 1px #204a87;">Agregar</button>
+                                <div class="quantity">
+                                <label>Cantidad:</label>&nbsp;<input name="cantidad" id="cantidad" type="number" min="1" max="9" step="1" value="<?php echo 1; ?>" disabled>
+                                </div>
+
+                                <button class="btn btn-primary" name="btnAccion" value="Agregar" type="submit" style="background: #204a87; border: solid 1px #204a87; margin-top: 5px;">Agregar</button>
                             </form>
                         </div>
                     </div>
@@ -163,3 +168,45 @@ if (isset($_GET['action'])) {
         }
     }
 ?>
+
+
+<script src="js/all.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle2.min.js"></script>
+
+<script>
+jQuery('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input');
+    jQuery('.quantity').each(function() {
+      var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+      btnUp.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue >= max) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue + 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+      btnDown.click(function() {
+        var oldValue = parseFloat(input.val());
+        if (oldValue <= min) {
+          var newVal = oldValue;
+        } else {
+          var newVal = oldValue - 1;
+        }
+        spinner.find("input").val(newVal);
+        spinner.find("input").trigger("change");
+      });
+
+    });
+
+    </script>
