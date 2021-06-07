@@ -1,0 +1,60 @@
+
+body{
+    overflow: hidden;
+    font-family: 'Muli', sans-serif;
+    font-weight: 300;
+    color: #204a87;
+}
+
+
+a:hover{
+    text-decoration: none;
+}
+
+.bg-primary{ background-color: #204a87 !important; }
+.bg-light{ background-color: #ffffff !important; }
+
+.btn{
+    border: 0;
+}
+
+.btn-primary{ 
+    background-color: #204a87;
+}
+
+.btn-primary:hover{
+    background-color: #204a87;
+}
+
+#sidebar-container{
+    min-height: 100vh;
+
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+
+}
+
+#sidebar-container .menu{
+    width: 18rem;
+}
+
+#content{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+    
+
+}
+
+
+@media (max-width: 768px) {
+   
+    #sidebar-container {
+        display: none;
+
+    }
+
+}
+ 

@@ -25,7 +25,7 @@ if ($resultado) {
     </script>';
 }else{
 	echo'<script type="text/javascript">
-    alert("Registro Fallido");
+    alert("Registro Fallido, este usuario ya esta registrado");
     window.location.href="../index.php";
     </script>';
 }
