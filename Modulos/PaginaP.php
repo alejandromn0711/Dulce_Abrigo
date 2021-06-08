@@ -113,11 +113,11 @@
 
         <div class="row text-dark py-5">
             <div class="col-12 text-center">
-                <h1>Ya tienes un usuario?</h1>
+                <h1>¿Ya tienes un usuario?</h1>
                 <h3 class="py-3">Registrate aqui</h3>
 
 
-                <button type="button" data-toggle="modal" data-target="#modal1" class="btn btn-secondary btn-lg ml-2">Ver mas...</button>
+                <a type="button" href="Modulos/RegCliente.php" class="btn btn-secondary btn-lg ml-2">Ver mas...</a>
 
             </div>
         </div>

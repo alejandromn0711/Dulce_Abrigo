@@ -59,12 +59,12 @@ if (!empty($_SESSION['active'])) {
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Correo" name="correo">
+                    <input type="email" class="fadeIn second" placeholder="Correo" name="correo" require="">
 
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Contraseña" name="clave" autocomplete="off">
+                    <input type="password" class="form-control" placeholder="Contraseña" name="clave" autocomplete="off" require="">
 
                 </div><br>
 
