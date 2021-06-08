@@ -18,9 +18,9 @@ $resultado = $objcliente->consultarcliente();
 
 <body>
 	<div class="formAñadirQ">
-		<h1 align="center">Ver clientes</h1><br>
-		<table border="1px solid white" width="900px;" height="400px;">
-			<tr align="center" bgcolor="#204a87" class="tr1">
+		<h1 style="text-align:center">Ver Clientes</h1><br>
+		<table style="border:1px solid #204a87; width:900px; height:400px;">
+			<tr style="color:white; background-color: #204a87; text-align: center;" class="tr1">
 				<td width="10%">cedula</td>
 				<td width="25%">Correo</td>
 				<td width="15%">Nombre</td>
@@ -33,13 +33,12 @@ $resultado = $objcliente->consultarcliente();
 	<?php
 	while ($cliente = $resultado->fetch_object()) {
 	?>
-
-		<tr class="tr2">
+		<tr class="tr2" style="text-align: center; border:#204a87 1px solid;">
 			<td width="10%"><?php echo $cliente->cedula ?></td>
 			<td width="29%"><?php echo $cliente->correo ?></td>
-			<td width="15%"><?php echo $cliente->nombre ?></td>
+			<td width="20%"><?php echo $cliente->nombre ?></td>
 			<td width="16%"><?php echo $cliente->telefono ?></td>
-			<td width="30%"><?php echo $cliente->direccion ?></td>
+			<td width="25%"><?php echo $cliente->direccion ?></td>
 		</tr>
 	<?php
 	}
