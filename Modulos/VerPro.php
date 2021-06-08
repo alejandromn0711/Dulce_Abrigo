@@ -52,14 +52,7 @@ if (mysqli_num_rows($resul) > 0) {
 						}
 
 						?>
-						<h5><input type="hidden" style="max-width:270px;" class="form-control" name="codproducto" id="codproducto" value="<?php echo $row['codproducto']; ?>"></h5>
-						<h5><input style="max-width:270px;" class="form-control" name="nombre_producto" id="nombre_producto" required value="<?php echo $row['nombre_producto']; ?>"></h5>
-						<h5><input style="max-width:270px;" class="form-control" name="precio" id="precio" pattern="[0-9]+" required value="<?php echo $row['precio']; ?>"></h5>
-						<o><input style="max-width:270px;" class="form-control" name="descripcion" id="descripcion" required value="<?php echo $row['descripcion']; ?>"></p>
-							<p><input style="max-width:270px;" class="form-control" name="existencia" id="existencia" pattern="[0-9]+" value="<?php echo $row['existencia']; ?>"></p>
-							<button class="btn btn-secondary" style="background-color: #204a87; border-color:#204a87; margin-top:-390px; margin-left:300px;" name="actualizar" type="submit"> Actualizar
-							</button>
-					</form>
+			
 
 						<h5><input type="hidden" style="max-width:290px;" class="form-control" name="codproducto" id="codproducto" value="<?php echo $row['codproducto']; ?>"></h5>
 						<h5><input style="max-width:290px;" class="form-control" name="nombre_producto" id="nombre_producto" required value="<?php echo $row['nombre_producto']; ?>"></h5>
