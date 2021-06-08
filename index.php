@@ -103,7 +103,7 @@ if (isset($_REQUEST["sesionDestroy"])) {
 
     ?>
 
-  </div>
+  </div><br>
 
 
 

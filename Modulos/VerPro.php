@@ -54,7 +54,7 @@ if (mysqli_num_rows($resul) > 0) {
 						?>
 			
 
-						<h5><input type="hidden" style="max-width:290px;" class="form-control" name="codproducto" id="codproducto" value="<?php echo $row['codproducto']; ?>"></h5>
+						<h5><input type="text" style="max-width:290px;" class="form-control" name="codproducto" id="codproducto" value="<?php echo $row['codproducto']; ?>"></h5>
 						<h5><input style="max-width:290px;" class="form-control" name="nombre_producto" id="nombre_producto" required value="<?php echo $row['nombre_producto']; ?>"></h5>
 						<h5><input style="max-width:290px;" class="form-control" name="precio" id="precio" required value="<?php echo $row['precio']; ?>"></h5>
 						<o><input style="max-width:290px;" class="form-control" name="descripcion" id="descripcion" required value="<?php echo $row['descripcion']; ?>"></p>
@@ -64,7 +64,7 @@ if (mysqli_num_rows($resul) > 0) {
 						
 					</form>
 
-					<hr>
+					
 
 					<h2>Actualizar foto de producto</h2>
 					<form method="post" enctype="multipart/form-data">
@@ -158,7 +158,7 @@ if (mysqli_num_rows($resul) > 0) {
 
 		</body>
 		
-		
+
 
 	<?php
 	}
@@ -197,8 +197,4 @@ if (mysqli_num_rows($resul) > 0) {
 		});
 	</script>
 
-	<script src="js/jquery-3.5.1.min.js"></script>
-	<script src="js/all.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.bundle2.min.js"></script>
+
