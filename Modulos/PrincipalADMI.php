@@ -19,7 +19,7 @@ if (isset($_SESSION['ADMI'])) {
                     <p class="lead text-muted">Revisa la ultima información</p>
                 </div>
                 <div class="col-lg-3 d-flex">
-                    <button class="btn btn-primary w-100 align-self-center">Ver pedidos</button>
+                    <a href="?p=VerPedidos" class="btn btn-primary w-100 align-self-center">Ver pedidos</a>
                 </div>
 
             </div>
