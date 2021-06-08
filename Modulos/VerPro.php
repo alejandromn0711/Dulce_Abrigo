@@ -157,7 +157,7 @@ if (mysqli_num_rows($resul) > 0) {
 		</div>
 
 		</body>
-		<div class="dropdown">
+		
 
 	<?php
 	}
@@ -201,4 +201,3 @@ if (mysqli_num_rows($resul) > 0) {
 	<script src="js/bootstrap.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.bundle2.min.js"></script>
-	</script>
