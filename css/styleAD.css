@@ -48,7 +48,7 @@ header h1{
 	font-size: 33px;
 	position: fixed;
 	top: 20px;
-	left: 40%;
+	left: 45%;
 }
 #check{
 	display: none;
@@ -57,7 +57,7 @@ header h1{
 }
 .MenuAd{
 	width: 350px;
-	height: 100vh;
+	height: 90vh;
 	background: #eaeaea;
 	position: fixed;
 	top: 90px;

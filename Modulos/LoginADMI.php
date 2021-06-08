@@ -3,7 +3,7 @@
 $alert = '';
 session_start();
 if (!empty($_SESSION['ADMI'])) {
-    header("location: ../indexAD.php");
+    header("location: ../indexADMI.php");
 } else {
 
     if (!empty($_POST)) {
@@ -29,7 +29,7 @@ if (!empty($_SESSION['ADMI'])) {
                 $_SESSION['correoADMI'] = $data['correo'];
 
 
-                header("location: ../indexAD.php");
+                header("location: ../indexADMI.php");
             } else {
                 $alert = 'El usuario o la clave son incorrectos';
                 session_destroy();
