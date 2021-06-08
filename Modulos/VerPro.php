@@ -158,6 +158,7 @@ if (mysqli_num_rows($resul) > 0) {
 
 		</body>
 		
+		
 
 	<?php
 	}
