@@ -18,7 +18,7 @@
                 </div>
 
                 <div class=" form-group">
-                    <input type="text" class="fadeIn second" placeholder="Nombre" name="nombre" required="" autocomplete="off" pattern="[A-z]+" >
+                    <input type="text" class="fadeIn second" placeholder="Nombre" name="nombre" required="" autocomplete="off" pattern="[A-Za-z ]+" >
                 </div>
 
                 <div class=" form-group">
@@ -27,7 +27,7 @@
 
 
                 <div class="form-group">
-                    <input type="text" class="fadeIn second" placeholder="Telefono" name="telefono" required="" autocomplete="off" pattern="[0-9]" maxlength="10">
+                    <input type="text" class="fadeIn second" placeholder="Telefono" name="telefono" required="" autocomplete="off" pattern="[0-9]+">
                 </div>
 
                 <div class=" form-group">

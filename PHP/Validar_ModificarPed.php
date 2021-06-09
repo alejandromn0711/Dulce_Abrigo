@@ -22,12 +22,12 @@ $result=$resultado->execute();
 if ($result) {
 	echo '<script type="text/javascript">
     alert("Pedido Actualizado");
-    window.location.href="../indexAD.php?p=PedidosADMI";
+    window.location.href="../indexADMI.php?p=PedidosADMI";
     </script>';
 }else{
 	echo '<script type="text/javascript">
     alert("Error Al Actualizar");
-    window.location.href="../indexAD.php?p=PedidosADMI";
+    window.location.href="../indexADMI.php?p=PedidosADMI";
     </script>';
 }
 ?>
