@@ -9,7 +9,7 @@
 <form method="post" action="IndexADMI.php?p=ActualizarPro" class="formAñadirP">
 	<h2>Actualizar Productos</h2><br>
 	<div class="form-group">
-		<input type="text" class="form-control" name="codproducto" id="codproducto" placeholder="Codigo Del Producto" maxlength="3" minlength="1" pattern="[0-9]+">
+		<input type="text" class="form-control" name="codproducto" id="codproducto" placeholder="Codigo Del Producto" maxlength="3" minlength="1" pattern="[0-9]+" required>
 	</div>
 	<div class="form-group">
 		<button type="submit" class="btn btn-primary" name="enviar"><i class="fa fa-check"></i> Consultar Producto</button><br><br>

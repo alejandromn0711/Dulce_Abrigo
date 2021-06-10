@@ -141,21 +141,30 @@
 							}
 
 
-
 							if ($subirarchivo == false) {
 								exit();
 							} else {
-								$sql = "SELECT * FROM producto WHERE codproducto = $pro";
+								 
+								$sqlA = "SELECT * FROM producto";
+								$conexionA = Conectarse();
+								$resulA = mysqli_query($conexionA, $sqlA);
+								$rowA = mysqli_fetch_array($resulA);
+
+								$codpro = $rowA['codproducto'];
+
+
+
+								$sql = "SELECT * FROM producto WHERE codproducto = '$codpro'";
 								$conexion = Conectarse();
 								$resu = mysqli_query($conexion, $sql);
 								$row = mysqli_fetch_array($resu);
-								$id = $row['codproducto'];
+								$idpro = $row['codproducto'];
 								
 
 
 
-								$sqlB = "UPDATE producto SET imagen = '$nombreimg' WHERE codproducto = '$id'";
-								$resul = mysqli_query($conexion, $sqlB);
+								$sqlB = "UPDATE producto SET imagen = '$nombreimg' WHERE codproducto = '$idpro'";
+								$resulpro = mysqli_query($conexion, $sqlB);
 								
 							}
 						}
