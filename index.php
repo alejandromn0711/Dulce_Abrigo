@@ -17,6 +17,7 @@ if (isset($_REQUEST["sesionDestroy"])) {
 
 <head>
   <title>Colchones Dulce Abrigo</title>
+  <link rel="icon" type="image/jpg" href="img/icon.ico">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/style-usuario.css">

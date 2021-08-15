@@ -44,6 +44,7 @@ if (!empty($_SESSION['active'])) {
 <html>
 
 <head>
+    <link rel="icon" type="image/jpg" href="../img/icon.ico">
     <link rel="stylesheet" href="../iconos/fontawesome/css/all.css">
     <link rel="stylesheet" href="../CSS/Login.css">
     <title></title>

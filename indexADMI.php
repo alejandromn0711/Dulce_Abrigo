@@ -18,6 +18,7 @@ if (isset($_SESSION['ADMI'])) {
     <head>
 
         <title>Administración</title>
+        <link rel="icon" type="image/jpg" href="img/icon.ico">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap-icons-1.0.0">
         <link rel="stylesheet" type="text/css" href="css/styleADMI.css">
