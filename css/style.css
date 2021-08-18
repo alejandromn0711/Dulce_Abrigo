@@ -229,6 +229,15 @@ margin-left: -60px;
 }
 }
 
+.contador{
+    background-color:#e40909e3;
+    margin-left: 2px;
+    padding-left: 2px;
+    padding-right: 6.8px;
+    padding-top: 0.1px;
+    padding-bottom: 1px;
+    border-radius: 100%;
+}
 
 
 
