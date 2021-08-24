@@ -67,7 +67,7 @@ if(isset($_POST['id'])){
 <form method="post" action="PHP/Validar_ModificarPed.php" class="formAñadirP">
 
 <div class="form-group">
-		<input type="text" class="form-control" name="id" id="id" placeholder="ID Pedido" pattern="[0-9]+">
+		<input type="hidden" class="form-control" name="id" id="id" placeholder="ID Pedido" pattern="[0-9]+" value="<?php  echo $id ?>">
 	</div>
 	
 	<div class="form-group">
