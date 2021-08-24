@@ -68,11 +68,11 @@
 ?>
 
 
-	<h5><input type="text" style="max-width:290px;" class="form-control" name="codproducto" id="codproducto" value="<?php echo $row['codproducto']; ?>"></h5>
-	<h5><input style="max-width:290px;" class="form-control" name="nombre_producto" id="nombre_producto" required value="<?php echo $row['nombre_producto']; ?>"></h5>
-	<h5><input style="max-width:290px;" class="form-control" name="precio" id="precio" required value="<?php echo $row['precio']; ?>"></h5>
-	<o><input style="max-width:290px;" class="form-control" name="descripcion" id="descripcion" required value="<?php echo $row['descripcion']; ?>"></p>
-	<p><input style="max-width:70px;" class="form-control" type="number" name="existencia" id="existencia" value="<?php echo $row['existencia']; ?>"></p>
+	<h5><input type="text" style="max-width:290px;" class="form-control" name="codproducto" id="codproducto" value="<?php echo $row['codproducto']; ?>" readonly></h5>
+	<h5><input style="max-width:290px;" class="form-control" name="nombre_producto" id="nombre_producto" required value="<?php echo $row['nombre_producto']; ?>"required></h5>
+	<h5><input style="max-width:290px;" class="form-control" name="precio" id="precio" required value="<?php echo $row['precio']; ?>" required></h5>
+	<o><input style="max-width:290px;" class="form-control" name="descripcion" id="descripcion" required value="<?php echo $row['descripcion']; ?>" required ></p>
+	<p><input style="max-width:70px;" class="form-control" type="number" name="existencia" id="existencia" value="<?php echo $row['existencia']; ?>" required></p>
 
 		<button class="btn btn-secondary" style="background-color: #204a87; border-color:#204a87; margin:1rem;" name="actualizar" type="submit"> Actualizar</button>
 	     </form>

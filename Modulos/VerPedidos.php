@@ -19,7 +19,8 @@ $resultado = $objpedido->consultarPedido();
 <body>
 	<div class="formAñadirQ">
 		<h1 style="text-align:center">Ver pedidos</h1><br>
-		<table style="border:1px solid #204a87; width:900px; height:400px;">
+		<div class="table-responsive">
+		<table style="border:1px solid #204a87; width:900px; height:400px;" class="table table-bordered">
 			<tr style="color:white; background-color: #204a87; text-align: center;" class="tr1">
 				<td width="15%">ID Venta</td>
 				<td width="25%">Fecha</td>
@@ -45,6 +46,7 @@ $resultado = $objpedido->consultarPedido();
 	}
 	?>
 	</table>
+	</div>
 </body>
 
 </html>

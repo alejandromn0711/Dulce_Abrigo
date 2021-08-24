@@ -19,9 +19,10 @@ $resultado = $objcliente->consultarcliente();
 <body>
 	<div class="formAñadirQ">
 		<h1 style="text-align:center">Ver Clientes</h1><br>
-		<table style="border:1px solid #204a87; width:900px; height:400px;">
+		<div class="table-responsive">
+		<table style="border:1px solid #204a87; width:900px; height:400px;" class="table table-bordered">
 			<tr style="color:white; background-color: #204a87; text-align: center;" class="tr1">
-				<td width="10%">cedula</td>
+				<td width="10%">Cedula</td>
 				<td width="25%">Correo</td>
 				<td width="15%">Nombre</td>
 				<td width="15%">Telefono</td>
@@ -44,6 +45,7 @@ $resultado = $objcliente->consultarcliente();
 	}
 	?>
 	</table>
+	</div>
 </body>
 
 </html>
