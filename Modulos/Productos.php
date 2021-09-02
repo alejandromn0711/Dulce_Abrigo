@@ -143,7 +143,7 @@ if (isset($_GET['action'])) {
                         <img title="<?php echo $row['nombre_producto']; ?>" alt="<?php echo $row['nombre_producto']; ?>" class="card-img-top" src="img/<?php echo $row['imagen']; ?>" data-toggle="popover" data-trigger="hover" data-content="<?php echo $row['descripcion']; ?>">
                         <div class="card-body">
                             <h5><?php echo $row['nombre_producto']; ?></h5>
-                            <h5 class="card-title">$<?php echo $row['precio']; ?></h5>
+                            <h5 class="card-title">$<?php echo number_format($row['precio']); ?></h5>
 
                             <form action="" method="post">
                                 <input type="hidden" name="codproducto" id="codproducto" value="<?php echo openssl_encrypt($row['codproducto'], COD, KEY); ?>">

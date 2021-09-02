@@ -65,6 +65,22 @@
 
 				}
 			}
+
+
+	if(isset($_POST['eliminar'])){
+
+		$sqlB = "DELETE FROM `producto` WHERE codproducto = $codproducto";
+		$resulB = mysqli_query($conexion, $sqlB);
+
+		if ($resulB){
+			echo '<script type="text/javascript">
+			alert("Producto Eliminado");
+			window.location.href="indexADMI.php?p=VerPro";
+			</script>';
+		}
+
+
+	}		
 ?>
 
 
@@ -75,6 +91,7 @@
 	<p><input style="max-width:70px;" class="form-control" type="number" name="existencia" id="existencia" value="<?php echo $row['existencia']; ?>" required></p>
 
 		<button class="btn btn-secondary" style="background-color: #204a87; border-color:#204a87; margin:1rem;" name="actualizar" type="submit"> Actualizar</button>
+		<button class="btn btn-danger" style="margin:0.5rem;" name="eliminar" type="submit" onclick="return ConfirmDelete()">Eliminar</button>
 	     </form>
 
 <?php
@@ -91,6 +108,24 @@
  }
 						
 ?>
+
+<script type="text/javascript">
+
+ function ConfirmDelete(){
+
+	var respuesta = confirm("Estas seguro que deseas eliminara este producto?");
+
+	if (respuesta == true){
+		
+		return true;
+	}else{
+		return false;
+	}
+
+ }
+
+
+</script>
 
 
 

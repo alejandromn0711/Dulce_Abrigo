@@ -36,7 +36,7 @@ if (!isset($_SESSION['active'])) {
 				<tr>
 					<td width="40%" class="text-center"><?php echo $producto['nombre'] ?></td>
 					<td width="15%" class="text-center"><?php echo $producto['cantidad'] ?></td>
-					<td width="20%" class="text-center"><?php echo $producto['precio'] ?></td>
+					<td width="20%" class="text-center"><?php echo number_format($producto['precio']) ?></td>
 					<td width="20%" class="text-center"><?php echo number_format($producto['cantidad'] * $producto['precio']) ?></td>
 					<td width="5%">
 						<form action="" method="post">
