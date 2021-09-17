@@ -48,7 +48,7 @@ if(isset($_POST['id'])){
 		<tr class="tr2" style="text-align: center; border:#204a87 1px solid;">
 			<td width="15%"><?php echo $pedido->id ?></td>
 			<td width="25%"><?php echo $pedido->fecha ?></td>
-			<td width="30%"><?php echo $pedido->correocli ?></td>
+			<td width="30%"><?php echo $pedido->nombrecli ?></td>
 			<td width="15%">$<?php echo $pedido->total ?></td>
 			<td width="15%"><?php echo $pedido->estatus ?></td>
 		</tr>

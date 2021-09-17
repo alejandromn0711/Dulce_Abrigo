@@ -9,18 +9,23 @@ include "../Carrito.php";
 <?php
 $total = 0;
 $SID = session_id();
-$correo = $_SESSION['nombre'];
+$correo = $_SESSION['email'];
+$nombre = $_SESSION['nombre'];
+$fechaActual = date('Y-m-d');
+$estatus = "Pendiente";
 
 foreach ($_SESSION['CARRITO'] as $indice => $producto) {
   $total = $total + ($producto['precio']) * $producto['cantidad'];
 }
 
-$sentencia = $pdo->prepare("INSERT INTO `ventas` (`id`, `session_id`, `fecha`, `correocli`, `total`, `estatus`)  VALUES 
-     (NULL, :clave_transaccion, NOW(), :correo, :total, 'Pendiente' );");
+$sentencia = $pdo->prepare("INSERT INTO `ventas` (`id`, `session_id`, `fecha`, `nombrecli`, `total`, `estatus`)  VALUES 
+     (NULL, :clave_transaccion, :fecha, :nombre, :total, :estatus );");
 
 $sentencia->bindParam(":clave_transaccion", $SID);
-$sentencia->bindParam(":correo", $correo);
+$sentencia->bindParam(":nombre", $nombre);
 $sentencia->bindParam(":total", $total);
+$sentencia->bindParam(":estatus", $estatus);
+$sentencia->bindParam(":fecha", $fechaActual);
 $sentencia->execute();
 $idVenta = $pdo->lastInsertId();
 
@@ -70,11 +75,11 @@ if ($completado >= 1) {
       </div>
       <div id="project">
         <div><span>N° DE VENTA: '. $idVenta .'  </span></div>
-        <div><span>CLIENTE: '. $correo .' </span></div>
+        <div><span>CLIENTE: '. $nombre .' </span></div>
         <div><span>DIRECCION: '. $_SESSION['direccion'] .' </span></div>
         <div><span>EMAIL: </span>'. $_SESSION['correo'] .'</div>
-        <div><span>FECHA: </span>' . $fecha . '</div>
-        <div><span>ESTATUS: </span></div>
+        <div><span>FECHA: </span>' . $fechaActual . '</div>
+        <div><span>ESTATUS: </span>' . $estatus . ' </span></div>
      </div>
     </header>
     <main>
@@ -112,13 +117,13 @@ if ($completado >= 1) {
           </tr>
         </tbody>
       </table>
-      <div id="notices">
+      <div id="AVISO">
         <div>NOTICE:</div>
-        <div class="notice">A finance charge of 1.5% will be made on unpaid balances after 30 days.</div>
+        <div class="notice">Su Pedido Sera Entregado En La Proxima Semana En La Direccion Que Tiene Registrada Su Usuario</div>
       </div>
     </main>
     <footer>
-      Invoice was created on a computer and is valid without the signature and seal.
+      Guarde Una Copia De Esta Factura En Caso De Que Se Presente Un Error
     </footer>
   </body>';
     $mpdf->WriteHTML($html);

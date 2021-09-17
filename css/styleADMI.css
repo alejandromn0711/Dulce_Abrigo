@@ -45,7 +45,14 @@ a:hover{
     height: 100vh;
     padding-bottom: 5rem;
 }
-
+.botonpdf{
+    border: none;
+    background-color : transparent;
+}
+.botonpdf:hover {
+    color : rgba(22, 10, 190, 0.582);
+    width: 30px;
+}
 
 @media (max-width: 768px) {
    
