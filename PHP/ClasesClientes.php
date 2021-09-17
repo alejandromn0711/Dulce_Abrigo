@@ -11,10 +11,6 @@ class Cliente
 	private $imagen;
 	private $Conexion;
 
-	public function Cliente()
-	{
-		
-	}
 
 	public function getcedula()
 	{

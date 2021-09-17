@@ -7,38 +7,39 @@
 
 
     if(isset($_POST['btnAccion'])){
+        $msj = "Upss... ID Incorrecto";
         switch($_POST['btnAccion']){
             case 'Agregar':
                 
                     if(is_numeric(openssl_decrypt( $_POST['codproducto'], COD, KEY))){
                         $ID = openssl_decrypt( $_POST['codproducto'], COD, KEY);
-                        $mensaje.="ID Correcto... ".$ID."<br/>";
+                        $mensaje.="ID Correcto... ".$ID;
                     }else{
-                        $mensaje.="Upss... ID Incorecto".$ID."<br/>";
+                        $mensaje.=$msj.$ID;
                     }
 
 
                     if(is_string(openssl_decrypt( $_POST['nombre_producto'], COD, KEY))){
                         $NOMBRE = openssl_decrypt( $_POST['nombre_producto'], COD, KEY);
-                        $mensaje.="Nombre ".$NOMBRE."<br/>";
+                        $mensaje.="Nombre ".$NOMBRE;
                     }else{
-                        $mensaje.="Upss... Algo paso con tu nombre".$NOMBRE."<br/>";
+                        $mensaje.="Upss... Algo paso con tu nombre".$NOMBRE;
                     }
 
 
                     if(is_numeric( $_POST['cantidad'])){
                         $CANTIDAD = $_POST['cantidad'];
-                        $mensaje.="Cantidad ".$CANTIDAD."<br/>";
+                        $mensaje.="Cantidad ".$CANTIDAD;
                     }else{
-                        $mensaje.="Upss... ID Incorecto".$CANTIDAD."<br/>";
+                        $mensaje.=$msj.$CANTIDAD;
                     }
 
 
                     if(is_numeric(openssl_decrypt( $_POST['precio'], COD, KEY))){
                         $PRECIO = openssl_decrypt( $_POST['precio'], COD, KEY);
-                        $mensaje.="El precio es... ".$PRECIO."<br/>";
+                        $mensaje.="El precio es... ".$PRECIO;
                     }else{
-                        $mensaje.="Upss... ID Incorecto".$PRECIO."<br/>";
+                        $mensaje.=$msj.$PRECIO;
                     }
 					if (!isset($_SESSION['CARRITO'])) {
 
@@ -81,9 +82,14 @@
                             }
                         }
                     }else{
-                        $mensaje.="Upss... ID Incorecto <br/>";
+                        $mensaje.=$msj;
                     }
                     break;
+
+                    default:
+                        
+
+                        break;
         }
     }
 ?>				
