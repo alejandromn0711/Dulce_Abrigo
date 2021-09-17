@@ -69,7 +69,7 @@
                          $mensaje="Producto Agregado.";
 					}
                 }
-					//$mensaje=print_r( $_SESSION,true);
+					
                 break;
                 case "Eliminar":
                     if(is_numeric( openssl_decrypt( $_POST['codproducto'], COD, KEY))){

@@ -8,7 +8,7 @@ if (!isset($_GET["p"])) {
 
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <?php
 session_start();

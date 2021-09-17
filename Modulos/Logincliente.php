@@ -41,7 +41,7 @@ if (!empty($_SESSION['active'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <link rel="icon" type="image/jpg" href="../img/icon.ico">
@@ -56,7 +56,7 @@ if (!empty($_SESSION['active'])) {
             <h2 class="active">Iniciar Sesión</h2>
             <form name="loginform" method="post" class="caja">
                 <div class="centrar_log">
-                    <img class="iconocliente" src="../IMG/logo1.png">
+                    <img class="iconocliente" src="../IMG/logo1.png" alt="">
                 </div>
 
                 <div class="form-group">
@@ -74,7 +74,7 @@ if (!empty($_SESSION['active'])) {
 
                 <button class="btn-primary" name="enviar">Ingresar</button>
 
-                <a href="../index.php" style="color: #336699; text-decoration:none;"><i class="fas fa-chevron-circle-left fa-1x">&nbsp;</i>Regresar</a>
+                <a href="../index.php" style="color: #336699; text-decoration:none;"><em class="fas fa-chevron-circle-left fa-1x">&nbsp;</em>Regresar</a>
 
 
                 <div id="formFooter">

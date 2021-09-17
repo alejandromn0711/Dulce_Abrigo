@@ -10,7 +10,7 @@
             <h2 class="active">Registrate</h2>
             <form name="loginform" method="post" action="../PHP/Validar_Registro.php" class="caja">
                 <div class="centrar_log">
-                    <img class="iconocliente" src="../IMG/logo1.png">
+                    <img class="iconocliente" src="../IMG/logo1.png" alt="">
                 </div>
 
                 <div class="form-group">
@@ -44,7 +44,7 @@
 
         <button class="btn-primary" name="enviar">Registrarse</button>
 
-        <a href="../index.php" style="color: #336699; text-decoration:none;"><i class="fas fa-chevron-circle-left fa-1x">&nbsp;</i>Regresar</a>
+        <a href="../index.php" style="color: #336699; text-decoration:none;"><em class="fas fa-chevron-circle-left fa-1x">&nbsp;</em>Regresar</a>
 
 
         </form>

@@ -15,7 +15,7 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<button type="submit" class="btnn" name="enviar"><i class="fa fa-check"></i> Actualizar Estado</button>
+		<button type="submit" class="btnn" name="enviar"><em class="fa fa-check"></em> Actualizar Estado</button>
 	</div>
 </form>	
 </form>

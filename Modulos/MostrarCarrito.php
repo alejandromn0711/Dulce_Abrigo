@@ -24,21 +24,21 @@ if (!isset($_SESSION['active'])) {
 	<table class="table table-bordered">
 		<tbody>
 			<tr>
-				<th width="40%" class="text-center">Nombre</th>
-				<th width="15%" class="text-center">Cantidad</th>
-				<th width="20%" class="text-center">Precio</th>
-				<th width="20%" class="text-center">Total</th>
-				<th width="5%" class="text-center">--</th>
+				<th  id="" class="text-center">Nombre</th>
+				<th  id="" class="text-center">Cantidad</th>
+				<th  id="" class="text-center">Precio</th>
+				<th  id="" class="text-center">Total</th>
+				<th id="" class="text-center">--</th>
 			</tr>
 			<?php $total = 0; ?>
 			<?php foreach ($_SESSION['CARRITO'] as $indice => $producto) {
 			?>
 				<tr>
-					<td width="40%" class="text-center"><?php echo $producto['nombre'] ?></td>
-					<td width="15%" class="text-center"><?php echo $producto['cantidad'] ?></td>
-					<td width="20%" class="text-center"><?php echo number_format($producto['precio']) ?></td>
-					<td width="20%" class="text-center"><?php echo number_format($producto['cantidad'] * $producto['precio']) ?></td>
-					<td width="5%">
+					<td  id="" class="text-center"><?php echo $producto['nombre'] ?></td>
+					<td  id="" class="text-center"><?php echo $producto['cantidad'] ?></td>
+					<td  id="" class="text-center"><?php echo number_format($producto['precio']) ?></td>
+					<td  id="" class="text-center"><?php echo number_format($producto['cantidad'] * $producto['precio']) ?></td>
+					<td>
 						<form action="" method="post">
 
 							<input type="hidden" id="codproducto" name="codproducto" value="<?php echo openssl_encrypt($producto['codproducto'], COD, KEY); ?>">
@@ -51,10 +51,10 @@ if (!isset($_SESSION['active'])) {
 				<?php $total = $total + ($producto['cantidad'] * $producto['precio']); ?>
 			<?php } ?>
 			<tr>
-				<td colspan="3" align="right">
+				<td colspan="3">
 					<h3>Total</h3>
 				</td>
-				<td align="center">
+				<td>
 					<h3>$<?php echo number_format($total); ?></h3>
 				</td>
 				<td></td>
