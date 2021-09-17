@@ -128,11 +128,11 @@
 
      <div class="categorias_var">
          <ul>
-             <li><a href="?p=colchones"><img src="img/catColchon.jpg"><br>COLCHONES</a></li>
-             <li><a href="?p=almohadas"><img src="img/catAlmohada.jpg"><br>ALMOHADAS</a></li>
-             <li><a href="?p=sabanas"><img src="img/catSabana.jpg"><br>SABANAS</a></li>
-             <li><a href="?p=bases"><img src="img/catBase.jpg"><br>BASE CAMAS</a></li>
-             <li><a href="?p=telas"><img src="img/catTela.jpg"><br>TELAS</a></li>
+             <li><a href="?p=colchones"><img src="img/catColchon.jpg" alt=""><br>COLCHONES</a></li>
+             <li><a href="?p=almohadas"><img src="img/catAlmohada.jpg" alt=""><br>ALMOHADAS</a></li>
+             <li><a href="?p=sabanas"><img src="img/catSabana.jpg" alt=""><br>SABANAS</a></li>
+             <li><a href="?p=bases"><img src="img/catBase.jpg" alt=""><br>BASE CAMAS</a></li>
+             <li><a href="?p=telas"><img src="img/catTela.jpg" alt=""><br>TELAS</a></li>
 
          </ul>
 

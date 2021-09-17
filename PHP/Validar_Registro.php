@@ -1,7 +1,8 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <title></title>
 	<link rel="stylesheet" type="text/css" href="css/estilosAñPro.css">
 </head>
 </html>

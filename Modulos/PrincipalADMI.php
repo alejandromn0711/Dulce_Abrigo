@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <?php
 
@@ -8,6 +8,7 @@ if (isset($_SESSION['ADMI'])) {
 ?>
 
 <head>
+<title></title>
 <link rel="stylesheet" type="text/css" href="css/styleADMI.css">
 </head>
 <div id="content">

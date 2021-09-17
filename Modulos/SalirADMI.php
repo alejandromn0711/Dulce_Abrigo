@@ -6,6 +6,11 @@ if(isset($_SESSION['ADMI'])){
 session_destroy();
 }
 ?>
-<html>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+    </head>
     <script>window.location.href="index.php"</script>
 </html>

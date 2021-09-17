@@ -13,7 +13,7 @@ foreach ($_SESSION['CARRITO'] as $indice => $producto) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>Colchones Dulce Abrigo</title>

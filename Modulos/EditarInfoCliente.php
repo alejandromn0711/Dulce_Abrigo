@@ -63,17 +63,17 @@ if (isset($_SESSION['active'])) {
 
 
           <div class="form-group">
-            <label for="exampleFormControlInput1"><b>Nombre Completo</b></label>
+            <label for="exampleFormControlInput1"><strong>Nombre Completo</strong></label>
             <input type="text" class="form-control" name="nombre" id="exampleFormControlInput1" value="<?php echo $row['nombre'] ?>" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlInput1"><b>Telefono</b></label>
+            <label for="exampleFormControlInput1"><strong>Telefono</strong></label>
             <input type="text" class="form-control" name="telefono" id="exampleFormControlInput1" value="<?php echo $row['telefono'] ?>" autocomplete="off">
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlInput1"><b>Dirección</b></label>
+            <label for="exampleFormControlInput1"><strong>Dirección</strong></label>
             <input type="text" class="form-control" name="direccion" id="exampleFormControlInput1" value="<?php echo $row['direccion'] ?>" autocomplete="off">
           </div>
 
@@ -157,12 +157,12 @@ if (isset($_SESSION['active'])) {
           ?>
 
           <div class="form-group">
-            <label for="exampleFormControlInput1"><b>Archivos permtidos: JPG y PNG</b></label><br>
+            <label for="exampleFormControlInput1"><strong>Archivos permtidos: JPG y PNG</strong></label><br>
             <input class='filestyle' data-buttonText="Logo" type="file" name="archivo" id="archivo" required>
           </div>
 
           <div class="form-group">
-          <label for="exampleFormControlInput1"><b>Imagen seleccionada:</b></label><br>
+          <label for="exampleFormControlInput1"><strong>Imagen seleccionada:</strong></label><br>
             <output id="img"></output>
           </div>
 

@@ -9,10 +9,6 @@ class Pedido
 	private $estatus;
 	private $Conexion;
 
-	public function Pedido()
-	{
-		
-	}
 
 	public function getid()
 	{
