@@ -1,3 +1,28 @@
+<?php
+//---AQUI ESTA LA CONEXION CON LA BASE DE DATOS
+require_once("../composer/vendor/autoload.php");
+include "../PHP/configPDO.php";
+include "../PHP/ConexionPDO.php";
+include "../Carrito.php";
+?>
+
+<?php
+$total = 0;
+$SID = session_id();
+$id = $_REQUEST['id'];
+echo $id;
+
+
+    $sentencia = $pdo->prepare("SELECT * FROM `ventas` INNER JOIN `detalleventas` ON detalleventas.idventa = ventas.id 
+              INNER JOIN `producto` ON detalleventas.idproducto = producto.codproducto WHERE ventas.id = :idventa");
+
+    $sentencia->bindParam(":idventa", $id);
+    $sentencia->execute();
+
+    $listaproductos = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <head>
     <link rel="stylesheet" type="text/css" href="css/styleFacturasAd.css">
 </head>
@@ -14,7 +39,7 @@
             <div>AsistenciaDulceAbrigo@gmail.com</div>
         </div>
         <div id="project">
-            <div><span>N° DE VENTA:</span></div>
+            <div><span>N° DE VENTA: <?php echo $sentencia->idventa ?> ?></span></div>
             <div><span>CLIENTE: </span></div>
             <div><span>DIRECCION: </span></div>
             <div><span>EMAIL: </span></div>
@@ -50,5 +75,6 @@
                     <td></td>
                 </tr>
             </tbody>
+
         </table>
 </body>
