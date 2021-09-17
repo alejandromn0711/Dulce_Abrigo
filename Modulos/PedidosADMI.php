@@ -1,82 +1,30 @@
-<?php
+<!DOCTYPE html>
+<html>
 
-include_once "PHP/conexionBD.php";
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="../bootstrap-icons-1.0.0">
+	<link rel="stylesheet" type="text/css" href="../Bootstrapcss/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleADMI.css">
+</head>
 
-?>
+<body>
 
-
-<form method="post" action="indexADMI.php?p=EditarPedidos">
-	<h2>Estado Del Pedido</h2><br>
-	<div class="form-group">
-		<input type="text" class="form-control" name="id" id="id" placeholder="ID Pedido" pattern="[0-9]+" required>
-	</div>
-	<div class="form-group">
-		<button type="submit" class="btn btn-primary" name="enviar"><i class="fa fa-check"></i> Consultar Pedido</button><br><br>
-	</div>
-</form>
-
-<?php
-
-if (isset($_POST['id'])) {
-
-	$id = $_POST['id'];
-	$sql = "SELECT * FROM ventas WHERE id = $id";
-	$conexion = Conectarse();
-	$resul = mysqli_query($conexion, $sql);
-
-
-
-?>
-
-	<div class="table-responsive">
-		<table class="table table-bordered">
-			<tr style="background-color: #204a87; color:white;">
-				<td width="15%">ID Venta</td>
-				<td width="25%">Fecha</td>
-				<td width="30%">Cliente</td>
-				<td width="15%">Total</td>
-				<td width="15%">Estatus</td>
-			</tr>
-
-	</div>
-
-	<?php
-	if ($pedido = $resul->fetch_object()) {
-	?>
-
-		<tr class="tr2" style="text-align: center; border:#204a87 1px solid;">
-			<td width="15%"><?php echo $pedido->id ?></td>
-			<td width="25%"><?php echo $pedido->fecha ?></td>
-			<td width="30%"><?php echo $pedido->nombrecli ?></td>
-			<td width="15%">$<?php echo $pedido->total ?></td>
-			<td width="15%"><?php echo $pedido->estatus ?></td>
-		</tr>
-<?php
-	}
-}
-?>
-</table>
-
-
-
-
-
-
-
-<form method="post" action="PHP/Validar_ModificarPed.php" class="formAñadirP">
-
-	<div class="form-group">
-		<input type="hidden" class="form-control" name="id" id="id" placeholder="ID Pedido" pattern="[0-9]+" value="<?php echo $id ?>">
-	</div>
-
-	<div class="form-group">
-		<select id="estatus" name="estatus" class="btn btn-success">
-			<option value="">--Estatus Del Pedido--</option>
-			<option value="Pendiente">Pendiente</option>
-			<option value="Procesado">Procesado</option>
-		</select>
-	</div>
-	<div class="form-group">
-		<button type="submit" class="btn btn-primary" name="enviar"><i class="fa fa-check"></i> Actualizar Estatus</button>
-	</div>
-</form>
+	<div class="AllProductos">
+		<span>
+			<h3 style="font-size: 50px;">Administrar Pedidos</h3>
+		</span><br><br>
+		<a class="ProductosAñ" style="font-size: 30px; color: #204a87;" href=" ?p=VerPedidos">
+			<svg width="2.2em" viewBox="0 0 16 16" class="bi bi-journal-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+				<path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+				<path fill-rule="evenodd" d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+			</svg> Ver Pedidos</a><br><br><br>
+		<a class="ProductosMo" style="font-size: 30px; color: #204a87;" href="?p=EditarPedidos">
+			<svg width="2.2em" viewBox="0 0 16 16" class="bi bi-journal-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+				<path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+				<path fill-rule="evenodd" d="M10.854 6.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 8.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+			</svg> Editar Pedidos</a>
+		</table>
